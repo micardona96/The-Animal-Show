@@ -31,7 +31,7 @@ class Escena:
                     self.animales[j] = animalAux
     
     def sortN(self):
-        """ Algoritmo de ordenamiento Counting Sort (Complejidad O(N))  """
+        """ Algoritmo de ordenamiento Counting Sort (Complejidad O(N)), se usa para ordenar los animales dentro de las escenas  """
         outputArray = [None]*3
         countArray = [0]*self.n
         for animal in self.animales:
