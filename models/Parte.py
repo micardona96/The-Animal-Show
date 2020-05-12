@@ -3,7 +3,13 @@ class Parte:
         self.escenas = escenas
     
     def getGrandezaTotal(self):
-        pass
+        """ Algortimo para sumar la cantidad total de grandeza de una parte (suma de todas sus escenas)
+            Complejidad Constante O(1)
+        """
+        contador = 0
+        for escena in self.escenas:
+            contador += escena.getGrandezaTotal()
+        return contador
 
     def sortN(self):
         outputArray = [None]*3
@@ -16,7 +22,12 @@ class Parte:
             countArray[i] += countArray[i-1]
 
         for i in range(len(self.escenas)-1, -1, -1):
-            outputArray[countArray[self.escenas[i].getGrandezaTotal() - 1] - 1] = str(self.escenas[i])
-
-        print(outputArray)    
+            outputArray[countArray[self.escenas[i].getGrandezaTotal() - 1] - 1] = self.escenas[i]
+        
+        self.escenas = outputArray 
     
+    def __str__(self):
+        description = ''
+        for escena in self.escenas:
+            description +=  str(escena) + '\n'
+        return description

@@ -16,6 +16,7 @@ escena3 = Escena([animal5, animal1, animal6])
 
 parte1 = Parte([escena1, escena2, escena3])
 
+print('Animales Ordenados por cada escena')
 escena1.sortN()
 print(escena1)
 escena2.sortN()
@@ -23,4 +24,9 @@ print(escena2)
 escena3.sortN()
 print(escena3)
 
+print('\n')
+
+print('Escenas ordenadas por cada parte')
 parte1.sortN()
+
+print(parte1)
