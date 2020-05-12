@@ -1,11 +1,23 @@
 class Espectaculo:
-    def __init__(self,escenas, animales, partes, apertura, n=9, k=3):
+    def __init__(self,escenas, animales, partes, apertura, n=9, k=3, m=4):
         self.apertura = apertura
         self.partes = partes
         self.escenas = escenas
         self.animales = animales
         self.n = n
         self.k = k
+        self.m = m
+
+    def promedioGradezaEspectaculo(self):
+        contador = 0
+        for escena in self.escenas:
+            contador += escena.totalGrandeza
+        contador *= 2
+
+        promedio = contador / (((self.m -1) * self.k) * 2)
+
+        print('El promedio de grandeza total del espectaculo fue de:')
+        print(round(promedio,2))
 
     def maxGradezaEscena(self):
         maxEscena = self.escenas[0]
@@ -100,6 +112,8 @@ class Espectaculo:
         self.minGradezaEscena()
         print('\n')
         self.maxGradezaEscena()
+        print('\n')
+        self.promedioGradezaEspectaculo()
 
     def __str__(self):
         description = ''
