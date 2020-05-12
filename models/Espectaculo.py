@@ -96,8 +96,8 @@ class Espectaculo:
         self.partes = outputArray 
 
     def main(self):
-        for escenas in self.escenas:
-            escenas.sortN()
+        for escena in self.escenas:
+            escena.sortNxN() #CAMBIAR AQUÍ PARA MODIFICAR COMPLEJIDAD
 
         self.apertura.sortN()
         
