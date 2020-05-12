@@ -1,6 +1,7 @@
 class Escena:
-    def __init__(self, animales=[]):
+    def __init__(self, animales=[], n=9):
         self.animales = animales
+        self.n = n
     
     def getGrandezaTotal(self):
         """ Calculo de la grandeza total de la escena (Complejidad O(N)) """
@@ -20,8 +21,9 @@ class Escena:
                     self.animales[j] = animalAux
     
     def sortN(self):
+        """ Algoritmo de ordenamiento Counting Sort (Complejidad O(N))  """
         outputArray = [None]*3
-        countArray = [0]*6
+        countArray = [0]*self.n
         for animal in self.animales:
             countArray[animal.grandeza - 1] += 1
 
@@ -30,12 +32,13 @@ class Escena:
 
         for i in range(len(self.animales)-1, -1, -1):
             outputArray[countArray[self.animales[i].grandeza - 1] - 1] = self.animales[i]
+            countArray[self.animales[i].grandeza - 1] -= 1
         
         self.animales = outputArray
 
 
     def __str__(self):
-        description = ''
+        description = []
         for animal in self.animales:
-            description += animal.nombre + ' '
-        return description       
+            description.append(str(animal))
+        return str(tuple(description))      
