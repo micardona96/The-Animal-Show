@@ -16,7 +16,11 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
   
 - [Reporte The Animal Show](#id5)
   - [Análisis general de la implementación ](#id6)
-    - [Clases](#id7)
+   - [Clases](#id7)
+      - [Animal](#id99)
+      - [Escena](#id98)
+      - [Parte](#id97)
+      - [Espectáculo](#id96)
     
   - [Solución O (n²)](#id8)
     - [Análisis](#id9)
@@ -64,19 +68,68 @@ Adicionalmente, el gerente del The animal show desea saber ciertos datos acerca 
 
 ### Requerimientos de optimización  <a name="id4"></a>
 
-1. Plantear una solución al problema cuya complejidad sea O (n²) 
-2. Plantear una solución al problema cuya complejidad sea O (n ∗ log(n)) 
-3. Plantear una solución al problema cuya complejidad sea O (n)
+1. [Plantear una solución al problema cuya complejidad sea O (n²)](#id8)
+2. [Plantear una solución al problema cuya complejidad sea O (n ∗ log(n)) ](#id14)
+3. [Plantear una solución al problema cuya complejidad sea O (n)](#id20)
 
 ## 🚀 Reporte The Animal Show <a name="id5"></a>
 ### Análisis general de la implementación <a name="id6"></a>
 The animal show app hace uso lenguaje de programación Python que permite un paradigma orientados a objetos, además es un lenguaje interpretado, dinámico y su filosofía hace hincapié en la legibilidad de su código.
 
-#### Clases <a name="id7"></a>
-##### Animal
-##### Escena
-##### Parte
-##### Espectáculo
+### Clases <a name="id7"></a>
+
+#### Animal <a name="id99"></a>
+Clase encargada de crear objetos tipo Animal, estos objetos cuentan con 3 propiedades las cules son:
+
+- Propiedades 
+  - **String** *Nombre:* Nombre del animal.
+  - **Int** *Grandeza:* Grandeza del animal en el espectaculo.
+  - **Int** *Cantidad:* Cantidad de apariciones del animal en las escenas.
+
+#### Escena <a name="id98"></a>
+Clase encargada de crear objetos tipo Escena, la cual se encarga de agrupar objetos tipo animal, cuenta con dos propiedades y 5 metodos que ayudan a la estructuracion de sus contenedores en el objeto parte.
+
+- Propiedades 
+  - **Array(Animal)** *Animales:* Lista de animales que conforma la escena.
+  - **Int** *TotalGrandeza:* Sumatoria total de las grandezas individuales de cada animal.
+
+- Metodos
+  - **aumentarCantidad():** Aumenta en 1 la cantidad de apariciones de los animales que participan en la escena, Complejidad O(1)
+  - **getGrandezaTotal():** Calculo de la grandeza total de la escena (Complejidad O(N)).
+  - **sortNxN():** Algoritmo de ordenamiento Bubble Sort (Complejidad O(N^2)), se usa para ordenar los animales dentro de las escenas.
+  - **sortN():** Algoritmo de ordenamiento Counting Sort (Complejidad O(N)), se usa para ordenar los animales dentro de las escenas.
+  - **sortNLogN():** Algoritmo de ordenamiento Quick Sort (Complejidad O(N)), se usa para ordenar los animales dentro de las escenas.
+
+#### Parte <a name="id97"></a>
+Clase encargada de crear objetos tipo Parte,la cual se encarga de agrupar objetos tipo Escena, cuenta con una propiedad y 2 metodos que ayudan a la estructuracion de sus contenedores en el objeto espectaculo.
+
+- Propiedades 
+  - **Array(Escena)** *Escenas:* Lista de escenas que conforma la parte de un espectaculo.
+  
+- Metodos
+  - **getGrandezaTotal():** Calculo de la grandeza total de la parte (Complejidad O(N)).
+  - **sortN():** Algoritmo de ordenamiento Counting Sort (Complejidad O(N)), se usa para ordenar las escenas dentro de las partes.
+  
+#### Espectáculo  <a name="id96"></a>
+Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar objetos tipo Parte, cuenta con una 7 propiedades y 7 metodos que despliean los resultados esperados por parte del administrador.
+
+- Propiedades 
+  - **Int** *apertura:* Lista de escenas que dan apertura al evento
+  - **Array(partes)** *partes:* Lista de partes que dan continuidad al evento, despues de la apertura.
+  - **Array(escenas)** *escenas:* Lista de escenas que conforman el evento.
+  - **Array(animales)** *animales:* Lista de animales que participan en el espectaculo.
+  - **Int** *m:* Cantidad de partes en el espectáculo.
+  - **Int** *n:* Cantidad de animales en el espectáculo.
+  - **Int** *k:* Cantidad de escenas por parte en el espectáculo.
+  
+- Metodos
+  - **promedioGradezaEspectaculo():**  Algoritmo para calcular el promedio del espectaculo (escenas) con complejidad O(k) (número de escenas).
+  - **maxGradezaEscena():**  Algoritmo para calcular la escena con mayor grandeza con complejidad O(k) (número de escenas).
+  - **minGradezaEscena():**  Algoritmo para calcular la escena con menor grandeza con complejidad O(k) (número de escenas).
+  - **maxParticipacionAnimal():**  Algoritmo para calcular los animales con mayor participación en escenas. Complejidad O(n) (número de animales).
+  - **minParticipacionAnimal():** Algoritmo para calcular los animales con menor participación en escenas. Complejidad O(n) (número de animales).
+  - **sortN():**  Algoritmo para ordenar las partes del espectaculo con Complejidad O(n) utilizando el algoritmo CountingSort.
+  - **main():**  Funcion que hace la invocaicon de cada uno de los eventos de forma secuencial.
 
 
 ### Solución O (n²)  <a name="id8"></a>
