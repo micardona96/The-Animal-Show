@@ -3,12 +3,12 @@
 Este proyecto se basa en la construcción de un software de ordenamiento que permita gestionar el itinerario y orden de prestación para el The animal show. La construcción del software está fundamentada en el análisis de complejidad de las escenas y partes del show, haciendo que en cada escena esta ordenada, tal que la aparición de los animales sea según su grandeza, además las partes del show también estarán ordenadas de forma ascendente, permitiendo que cada escena será mas grande que la anterior. Tomando en cuenta esto, disponemos de un espectáculo maravilloso.
 
 **Índice**   
-- [Lineamentos The animal show](#id1)
+- [Lineamentos The Animal Show](#id1)
   - [Descripción](#id2)
   - [Características adicionales](#id3)
   - [Requerimientos de optimización](#id4)
   
-- [Reporte The animal show](#id5)
+- [Reporte The Animal Show](#id5)
   - [Análisis general de la implementación ](#id6)
     - [Clases](#id7)
     
@@ -35,7 +35,7 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
   - [Conclusiones del proyecto](#id27)
 
 
-## Lineamentos The animal show <a name="id1"></a>
+## Lineamentos The Animal Show <a name="id1"></a>
 ### Descripción <a name="id2"></a>
 - The animal show contará con n animales como participantes del espectáculo. Además, el evento consistir a en m partes.
 - Una primera parte: Una gran apertura del evento, que consiste en (m−1) ∗k escenas, donde en cada escena participan 3 animales distintos.
@@ -62,7 +62,7 @@ Adicionalmente, el gerente del The animal show desea saber ciertos datos acerca 
 2. Plantear una solución al problema cuya complejidad sea O (n ∗ log(n)) 
 3. Plantear una solución al problema cuya complejidad sea O (n)
 
-## Reporte The animal show <a name="id5"></a>
+## Reporte The Animal Show <a name="id5"></a>
 ### Análisis general de la implementación <a name="id6"></a>
 The animal show app hace uso lenguaje de programación Python que permite un paradigma orientados a objetos, además es un lenguaje interpretado, dinámico y su filosofía hace hincapié en la legibilidad de su código.
 
@@ -73,30 +73,30 @@ The animal show app hace uso lenguaje de programación Python que permite un par
 ##### Espectáculo
 
 
-### Solución O (n²) 
-#### Análisis 
-#### Resultados
-#### Aplicativo 
-#### Instrucciones de uso
-#### Testing
+### Solución O (n²)  <a name="id8"></a>
+#### Análisis <a name="id9"></a>
+#### Resultados <a name="id10"></a>
+#### Aplicativo <a name="id11"></a>
+#### Instrucciones de uso<a name="id12"></a>
+#### Testing <a name="id13"></a>
 
-### Solución O (n log n) 
-#### Análisis 
-#### Resultados
-#### Aplicativo 
-#### Instrucciones de uso
-#### Testing
-
-
-### Solución O (n) 
-#### Análisis 
-#### Resultados
-#### Aplicativo 
-#### Instrucciones de uso
-#### Testing
-
-### Análisis general de resultados 
+### Solución O (n log n)  <a name="id14"></a>
+#### Análisis <a name="id15"></a>
+#### Resultados <a name="id16"></a>
+#### Aplicativo <a name="id17"></a>
+#### Instrucciones de uso <a name="id18"></a>
+#### Testing <a name="id19"></a>
 
 
-### Conclusiones del proyecto
+### Solución O (n) <a name="id20"></a>
+#### Análisis <a name="id21"></a>
+#### Resultados <a name="id22"></a>
+#### Aplicativo <a name="id23"></a>
+#### Instrucciones de uso <a name="id24"></a>
+#### Testing <a name="id25"></a>
+
+### Análisis general de resultados  <a name="id26"></a>
+
+
+### Conclusiones del proyecto <a name="id27"></a>
 
