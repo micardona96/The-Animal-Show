@@ -1,11 +1,11 @@
 class Espectaculo:
-    def __init__(self, partes, apertura, n=9, k=3):
+    def __init__(self,escenas, partes, apertura, n=9, k=3):
         self.apertura = apertura
+        self.partes = partes
+        self.escenas = escenas
         self.n = n
         self.k = k
 
-   # cantidad de elementos del espectaculo
-        self.partes = partes
 
 
     def sortN(self):
@@ -25,6 +25,21 @@ class Espectaculo:
         
         self.partes = outputArray 
 
+    def main(self):
+        for escenas in self.escenas:
+            escenas.sortN()
+
+        self.apertura.sortN()
+        
+        for parte in self.partes:
+            parte.sortN()
+
+        print('Apertura:')
+        print(self.apertura)
+        print('\n')
+
+        self.sortN()
+        print(self)
 
     def __str__(self):
         description = ''

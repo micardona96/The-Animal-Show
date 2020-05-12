@@ -29,28 +29,14 @@ parte1 = Parte([escena1, escena2, escena3])
 parte2 = Parte([escena4, escena5, escena6])
 parte3 = Parte([escena7, escena8, escena9])
 
-escena1.sortN()
-escena2.sortN()
-escena3.sortN()
-escena4.sortN()
-escena5.sortN()
-escena6.sortN()
-escena7.sortN()
-escena8.sortN()
-escena9.sortN()
 
-parte1.sortN()
-parte2.sortN()
-parte3.sortN()
-parteApertura.sortN()
-
-print('Apertura:')
 print(parteApertura)
 
 print('\n')
 
-espectaculo = Espectaculo(partes=[parte1, parte2, parte3], apertura=parteApertura)
+espectaculo = Espectaculo(partes=[parte1, parte2, parte3], 
+                        apertura=parteApertura, 
+                        escenas=[escena1, escena2, escena3, escena4, escena5, escena6, escena7, escena8, escena9])
 
-espectaculo.sortN()
+espectaculo.main()
 
-print(espectaculo)
