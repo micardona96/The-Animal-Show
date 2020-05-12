@@ -1,8 +1,14 @@
 class Escena:
+
     def __init__(self, animales=[], n=9):
         self.animales = animales
         self.n = n
-    
+
+    def aumentarCantidad(self):
+        """ Aumenta en 1 la cantidad de apariciones de los animales que participan en la escena Complejidad O(1)"""
+        for animal in self.animales:
+            animal.cantidad += 1
+
     def getGrandezaTotal(self):
         """ Calculo de la grandeza total de la escena (Complejidad O(N)) """
         contador = 0
@@ -34,6 +40,8 @@ class Escena:
             outputArray[countArray[self.animales[i].grandeza - 1] - 1] = self.animales[i]
             countArray[self.animales[i].grandeza - 1] -= 1
         
+        self.aumentarCantidad()
+
         self.animales = outputArray
 
 

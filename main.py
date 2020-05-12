@@ -13,6 +13,7 @@ pantera = Animal('Pantera negra', 7)
 tigre = Animal('Tigre', 8)
 leon = Animal('León', 9)
 
+
 escena1 = Escena([caiman, capibara, loro])
 escena2 = Escena([tigre, loro, capibara])
 escena3 = Escena([tigre, cebra, pantera])
@@ -24,6 +25,7 @@ escena8 = Escena([leon, caiman, loro])
 escena9 = Escena([leon, cocodrilo, boa])
 
 parteApertura = Parte([escena1,escena7,escena6,escena4,escena2,escena8,escena9,escena5,escena3])
+Escena.escenas = parteApertura.escenas
 
 parte1 = Parte([escena1, escena2, escena3])
 parte2 = Parte([escena4, escena5, escena6])
@@ -40,3 +42,5 @@ espectaculo = Espectaculo(partes=[parte1, parte2, parte3],
 
 espectaculo.main()
 
+
+print(loro.cantidad * 2)

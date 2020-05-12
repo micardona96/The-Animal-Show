@@ -13,6 +13,7 @@ class Parte:
         return contador
 
     def sortN(self):
+        """ Algoritmo de ordenamiento Counting Sort (Complejidad O(N))  """
         maxGrandezaEscena = self.n + (self.n-1) + (self.n-2)
         outputArray = [None]*len(self.escenas)
         countArray = [0]*maxGrandezaEscena
