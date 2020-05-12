@@ -19,12 +19,30 @@ class Espectaculo:
         
         print('El/Los animales que más partició/participaron en escenas fueron: ')
         if len(arrayMaxAnimales) == 0:
-            print(maxAnimal.nombre + " con " + str(maxAnimal.cantidad * 2))
+            print(maxAnimal.nombre + " con " + str(maxAnimal.cantidad * 2) + " escenas")
         else:
             
             for animal in arrayMaxAnimales:
-                print(animal.nombre + " con " + str(animal.cantidad * 2))
-            print(maxAnimal.nombre + " con " + str(animal.cantidad * 2))
+                print(animal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
+            print(maxAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
+
+    def minParticipacionAnimal(self):
+        arrayMinAnimales = []
+        minAnimal = self.animales[0]
+        for i in range(1,len(self.animales)):
+            if self.animales[i].cantidad < minAnimal.cantidad:
+                minAnimal = self.animales[i]
+            elif self.animales[i].cantidad == minAnimal.cantidad:
+                arrayMinAnimales.append(self.animales[i])
+        
+        print('El/Los animales que menos partició/participaron en escenas fueron: ')
+        if len(arrayMinAnimales) == 0:
+            print(minAnimal.nombre + " con " + str(minAnimal.cantidad * 2) + " escenas")
+        else:
+            
+            for animal in arrayMinAnimales:
+                print(animal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
+            print(minAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
 
     def sortN(self):
         maxGrandezaParte = (self.n + (self.n - 1) + (self.n - 2))*self.k
@@ -60,6 +78,8 @@ class Espectaculo:
         print(self)
 
         self.maxParticipacionAnimal()
+        print('\n')
+        self.minParticipacionAnimal()
 
     def __str__(self):
         description = ''
