@@ -3,6 +3,7 @@ class Escena:
     def __init__(self, animales=[], n=9):
         self.animales = animales
         self.n = n
+        self.totalGrandeza = 0
 
     def aumentarCantidad(self):
         """ Aumenta en 1 la cantidad de apariciones de los animales que participan en la escena Complejidad O(1)"""
@@ -11,11 +12,14 @@ class Escena:
 
     def getGrandezaTotal(self):
         """ Calculo de la grandeza total de la escena (Complejidad O(N)) """
-        contador = 0
-        for animal in self.animales:
-            contador += animal.grandeza
 
-        return contador
+        if self.totalGrandeza == 0:
+            contador = 0
+            for animal in self.animales:
+                contador += animal.grandeza
+            self.totalGrandeza = contador
+
+        return self.totalGrandeza
 
     def sortNxN(self):
         """ Algoritmo de ordenamiento burbuja (Complejidad O(N^2)) """

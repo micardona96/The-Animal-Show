@@ -7,6 +7,23 @@ class Espectaculo:
         self.n = n
         self.k = k
 
+    def maxGradezaEscena(self):
+        maxEscena = self.escenas[0]
+        for i in range(1, len(self.escenas)):
+            if self.escenas[i].totalGrandeza > maxEscena.totalGrandeza:
+                maxEscena = self.escenas[i]
+
+        print('La escena de mayor grandeza total fue:')
+        print(maxEscena)
+
+    def minGradezaEscena(self):
+        minEscena = self.escenas[0]
+        for i in range(1, len(self.escenas)):
+            if self.escenas[i].totalGrandeza < minEscena.totalGrandeza:
+                minEscena = self.escenas[i]
+
+        print('La escena de menor grandeza total fue:')
+        print(minEscena)
 
     def maxParticipacionAnimal(self):
         arrayMaxAnimales = []
@@ -21,7 +38,6 @@ class Espectaculo:
         if len(arrayMaxAnimales) == 0:
             print(maxAnimal.nombre + " con " + str(maxAnimal.cantidad * 2) + " escenas")
         else:
-            
             for animal in arrayMaxAnimales:
                 print(animal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
             print(maxAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
@@ -80,6 +96,10 @@ class Espectaculo:
         self.maxParticipacionAnimal()
         print('\n')
         self.minParticipacionAnimal()
+        print('\n')
+        self.minGradezaEscena()
+        print('\n')
+        self.maxGradezaEscena()
 
     def __str__(self):
         description = ''
