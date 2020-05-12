@@ -123,7 +123,7 @@ class Espectaculo:
 
     def __str__(self):
         description = ''
-        for parte in self.partes:
-            description += str(parte) + '\n\n'
+        for i in range(len(self.partes)):
+            description += "parte " + str(i+1)+ "\n" + str(self.partes[i]) + '\n\n'
         return description
 
