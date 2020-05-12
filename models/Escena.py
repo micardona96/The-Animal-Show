@@ -1,8 +1,9 @@
 class Escena:
 
-    def __init__(self, animales=[], n=9):
+    n = None
+
+    def __init__(self, animales=[]):
         self.animales = animales
-        self.n = n
         self.totalGrandeza = 0
 
     def aumentarCantidad(self):
@@ -33,7 +34,7 @@ class Escena:
     def sortN(self):
         """ Algoritmo de ordenamiento Counting Sort (Complejidad O(N)), se usa para ordenar los animales dentro de las escenas  """
         outputArray = [None]*3
-        countArray = [0]*self.n
+        countArray = [0]*Escena.n
         for animal in self.animales:
             countArray[animal.grandeza - 1] += 1
 

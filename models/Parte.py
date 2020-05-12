@@ -1,7 +1,7 @@
 class Parte:
-    def __init__(self, escenas=[], n=9):
+    n = None
+    def __init__(self, escenas=[]):
         self.escenas = escenas
-        self.n = n
     
     def getGrandezaTotal(self):
         """ Algortimo para sumar la cantidad total de grandeza de una parte (suma de todas sus escenas)
@@ -14,7 +14,7 @@ class Parte:
 
     def sortN(self):
         """ Algoritmo de ordenamiento Counting Sort (Complejidad O(N))  """
-        maxGrandezaEscena = self.n + (self.n-1) + (self.n-2)
+        maxGrandezaEscena = Parte.n + (Parte.n-1) + (Parte.n-2)
         outputArray = [None]*len(self.escenas)
         countArray = [0]*maxGrandezaEscena
 

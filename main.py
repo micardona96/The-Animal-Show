@@ -13,6 +13,9 @@ pantera = Animal('Pantera negra', 7)
 tigre = Animal('Tigre', 8)
 leon = Animal('León', 9)
 
+Escena.n = 9
+Parte.n = 9
+
 
 escena1 = Escena([caiman, capibara, loro])
 escena2 = Escena([tigre, loro, capibara])
