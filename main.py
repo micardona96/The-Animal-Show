@@ -32,15 +32,13 @@ parte2 = Parte([escena4, escena5, escena6])
 parte3 = Parte([escena7, escena8, escena9])
 
 
-print(parteApertura)
-
 print('\n')
 
-espectaculo = Espectaculo(partes=[parte1, parte2, parte3], 
+espectaculo = Espectaculo(
+                        animales=[capibara, loro, caiman, boa, cocodrilo, cebra, pantera, tigre, leon],
+                        partes=[parte1, parte2, parte3], 
                         apertura=parteApertura, 
                         escenas=[escena1, escena2, escena3, escena4, escena5, escena6, escena7, escena8, escena9])
 
 espectaculo.main()
 
-
-print(loro.cantidad * 2)

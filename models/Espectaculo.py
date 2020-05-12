@@ -1,12 +1,30 @@
 class Espectaculo:
-    def __init__(self,escenas, partes, apertura, n=9, k=3):
+    def __init__(self,escenas, animales, partes, apertura, n=9, k=3):
         self.apertura = apertura
         self.partes = partes
         self.escenas = escenas
+        self.animales = animales
         self.n = n
         self.k = k
 
 
+    def maxParticipacionAnimal(self):
+        arrayMaxAnimales = []
+        maxAnimal = self.animales[0]
+        for i in range(1,len(self.animales)):
+            if self.animales[i].cantidad > maxAnimal.cantidad:
+                maxAnimal = self.animales[i]
+            elif self.animales[i].cantidad == maxAnimal.cantidad:
+                arrayMaxAnimales.append(self.animales[i])
+        
+        print('El/Los animales que más partició/participaron en escenas fueron: ')
+        if len(arrayMaxAnimales) == 0:
+            print(maxAnimal.nombre + " con " + str(maxAnimal.cantidad * 2))
+        else:
+            
+            for animal in arrayMaxAnimales:
+                print(animal.nombre + " con " + str(animal.cantidad * 2))
+            print(maxAnimal.nombre + " con " + str(animal.cantidad * 2))
 
     def sortN(self):
         maxGrandezaParte = (self.n + (self.n - 1) + (self.n - 2))*self.k
@@ -40,6 +58,8 @@ class Espectaculo:
 
         self.sortN()
         print(self)
+
+        self.maxParticipacionAnimal()
 
     def __str__(self):
         description = ''
