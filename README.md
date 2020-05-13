@@ -69,16 +69,16 @@ Adicionalmente, el gerente del The animal show desea saber ciertos datos acerca 
 ### Requerimientos de optimización  <a name="id4"></a>
 
 1. [Plantear una solución al problema cuya complejidad sea O (n²)](#id8)
-2. [Plantear una solución al problema cuya complejidad sea O (n ∗ log(n)) ](#id14)
+2. [Plantear una solución al problema cuya complejidad sea O (n log(n)) ](#id14)
 3. [Plantear una solución al problema cuya complejidad sea O (n)](#id20)
 
 ## 🚀 Reporte The Animal Show <a name="id5"></a>
 ### Análisis general de la implementación <a name="id6"></a>
 The animal show app hace uso lenguaje de programación Python que permite un paradigma orientados a objetos, además es un lenguaje interpretado, dinámico y su filosofía hace hincapié en la legibilidad de su código.
 
-### Clases <a name="id7"></a>
+### [Clases](./models) <a name="id7"></a>
 
-#### Animal <a name="id99"></a>
+#### [Animal](./models/Animal.py)  <a name="id99"></a>
 Clase encargada de crear objetos tipo Animal, estos objetos cuentan con 3 propiedades las cules son:
 
 - Propiedades 
@@ -86,7 +86,7 @@ Clase encargada de crear objetos tipo Animal, estos objetos cuentan con 3 propie
   - **Int** *Grandeza:* Grandeza del animal en el espectaculo.
   - **Int** *Cantidad:* Cantidad de apariciones del animal en las escenas.
 
-#### Escena <a name="id98"></a>
+#### [Escena](./models/Escena.py) <a name="id98"></a>
 Clase encargada de crear objetos tipo Escena, la cual se encarga de agrupar objetos tipo animal, cuenta con dos propiedades y 5 metodos que ayudan a la estructuracion de sus contenedores en el objeto parte.
 
 - Propiedades 
@@ -96,11 +96,11 @@ Clase encargada de crear objetos tipo Escena, la cual se encarga de agrupar obje
 - Metodos
   - **aumentarCantidad():** Aumenta en 1 la cantidad de apariciones de los animales que participan en la escena, Complejidad O(1)
   - **getGrandezaTotal():** Calculo de la grandeza total de la escena (Complejidad O(N)).
-  - **sortNxN():** Algoritmo de ordenamiento Bubble Sort (Complejidad O(N^2)), se usa para ordenar los animales dentro de las escenas.
+  - **sortNxN():** Algoritmo de ordenamiento Bubble Sort (Complejidad O(N²)), se usa para ordenar los animales dentro de las escenas.
   - **sortN():** Algoritmo de ordenamiento Counting Sort (Complejidad O(N)), se usa para ordenar los animales dentro de las escenas.
-  - **sortNLogN():** Algoritmo de ordenamiento Quick Sort (Complejidad O(N)), se usa para ordenar los animales dentro de las escenas.
+  - **sortNLogN():** Algoritmo de ordenamiento Quick Sort (Complejidad O(N log (N))), se usa para ordenar los animales dentro de las escenas.
 
-#### Parte <a name="id97"></a>
+#### [Parte](./models/Parte.py) <a name="id97"></a>
 Clase encargada de crear objetos tipo Parte,la cual se encarga de agrupar objetos tipo Escena, cuenta con una propiedad y 2 metodos que ayudan a la estructuracion de sus contenedores en el objeto espectaculo.
 
 - Propiedades 
@@ -110,7 +110,7 @@ Clase encargada de crear objetos tipo Parte,la cual se encarga de agrupar objeto
   - **getGrandezaTotal():** Calculo de la grandeza total de la parte (Complejidad O(N)).
   - **sortN():** Algoritmo de ordenamiento Counting Sort (Complejidad O(N)), se usa para ordenar las escenas dentro de las partes.
   
-#### Espectáculo  <a name="id96"></a>
+#### [Espectáculo](./models/Espectaculo.py)  <a name="id96"></a>
 Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar objetos tipo Parte, cuenta con una 7 propiedades y 7 metodos que despliean los resultados esperados por parte del administrador.
 
 - Propiedades 
