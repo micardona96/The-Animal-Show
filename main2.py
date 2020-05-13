@@ -2,6 +2,7 @@ from models.Animal import Animal
 from models.Escena import Escena
 from models.Espectaculo import Espectaculo
 from models.Parte import Parte
+from timeit import timeit
 
 cienpies = Animal('Cienpies', 1)
 libelula = Animal('Libelula', 2)
@@ -39,5 +40,18 @@ espectaculo = Espectaculo(
                         apertura=parteApertura, 
                         escenas=[escena1, escena2, escena3, escena4])
 
-espectaculo.main()
+#espectaculo.main()
 
+print('N')
+resultado1=timeit("espectaculo.main(algoritmo='N')",
+                 globals = globals(), number = 200)
+print(resultado1 * 1000)
+print('NLogN')
+resultado2=timeit("espectaculo.main(algoritmo='NLogN')",
+                 globals = globals(), number = 200)
+print(resultado2 * 1000)
+print('NxN')
+resultado3=timeit("espectaculo.main(algoritmo='NxN')",
+                 globals = globals(), number = 200)
+
+print(resultado3 * 1000)

@@ -45,6 +45,21 @@ espectaculo = Espectaculo(
                         escenas=[escena1, escena2, escena3, escena4, escena5, escena6, escena7, escena8, escena9])
 
 
-espectaculo.main(algoritmo='NLogN')
+#espectaculo.main(algoritmo='NLogN')
 #resultado = timeit("espectaculo.main(algoritmo='NLogN')", globals=globals(), number=200)
 #print(resultado)
+print('NxN')
+resultado3=timeit("espectaculo.main(algoritmo='NxN')",
+                 globals = globals(), number = 200)
+print(resultado3 * 1000)
+
+print('NLogN')
+resultado2=timeit("espectaculo.main(algoritmo='NLogN')",
+                 globals = globals(), number = 200)
+print(resultado2 * 1000)
+
+print('N')
+resultado1=timeit("espectaculo.main(algoritmo='N')",
+                 globals = globals(), number = 200)
+print(resultado1 * 1000)
+

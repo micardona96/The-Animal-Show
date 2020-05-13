@@ -46,7 +46,7 @@ def sortNLogN(numeros):
         return sortNLogN(left) + [pivot] + sortNLogN(right)
 
 
-arrayNumeros = [randint(1,100) for i in range(10)]
+arrayNumeros = [randint(1,100) for i in range(3)]
 
 print('Algoritmo NxN')
 print(timeit('sortNxN(arrayNumeros)',globals = globals(), number = 1000) * 1000)
