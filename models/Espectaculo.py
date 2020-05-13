@@ -95,9 +95,16 @@ class Espectaculo:
         
         self.partes = outputArray 
 
-    def main(self):
-        for escena in self.escenas:
-            escena.sortNxN() #CAMBIAR AQUÍ PARA MODIFICAR COMPLEJIDAD
+    def main(self, algoritmo='N'):
+        if algoritmo == 'N':
+            for escena in self.escenas:
+                escena.sortN()           
+        elif algoritmo == 'NxN':
+            for escena in self.escenas:
+                escena.sortNxN()
+        elif algoritmo == 'NLogN':
+            for escena in self.escenas:
+                escena.quickSort()
 
         self.apertura.sortN()
         

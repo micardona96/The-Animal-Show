@@ -1,3 +1,5 @@
+from random import randint
+
 class Escena:
 
     n = None
@@ -50,6 +52,30 @@ class Escena:
 
         self.animales = outputArray
 
+    def sortNLogN(self, arrayAnimales):
+        """ Algoritmo de ordenamiento QuickSort con complejidad O(NLogN), pivote seleccionado aleatoriamente """
+        if len(arrayAnimales) < 1:
+            return []
+
+        posicionPivot = randint(0, len(arrayAnimales) - 1)
+        pivot = arrayAnimales[posicionPivot]
+        left = []
+        right = []
+        arrayAnimales.pop(posicionPivot)
+
+        for i in range(len(arrayAnimales)):
+            if arrayAnimales[i].grandeza < pivot.grandeza:
+                left.append(arrayAnimales[i])
+            else:
+                right.append(arrayAnimales[i])
+
+        return self.sortNLogN(left) + [pivot] + self.sortNLogN(right)
+
+    def quickSort(self):
+        """ Función auxiliar que ayuda a ejecutar el algoritmo quicksort recursivamente """
+        self.aumentarCantidad()
+        self.animales = self.sortNLogN(self.animales)
+        
 
     def __str__(self):
         description = []

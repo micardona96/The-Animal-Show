@@ -43,5 +43,5 @@ espectaculo = Espectaculo(
                         apertura=parteApertura, 
                         escenas=[escena1, escena2, escena3, escena4, escena5, escena6, escena7, escena8, escena9])
 
-espectaculo.main()
+espectaculo.main(algoritmo='N')
 
