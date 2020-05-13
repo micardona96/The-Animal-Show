@@ -1,3 +1,5 @@
+from random import randint
+
 class Parte:
     n = None
     def __init__(self, escenas=[]):
@@ -11,6 +13,38 @@ class Parte:
         for escena in self.escenas:
             contador += escena.getGrandezaTotal()
         return contador
+
+    def sortNxN(self):
+        """ Algoritmo de ordenamiento burbuja (Complejidad O(N^2)) """
+        for i in range(len(self.escenas)):
+            for j in range(len(self.escenas) - i - 1):
+                if self.escenas[j].getGrandezaTotal() > self.escenas[j+1].getGrandezaTotal():
+                    escenaAux = self.escenas[j+1]
+                    self.escenas[j+1] = self.escenas[j]
+                    self.escenas[j] = escenaAux
+
+    def sortNLogN(self, arrayEscenas):
+        """ Algoritmo de ordenamiento QuickSort con complejidad O(NLogN), pivote seleccionado aleatoriamente """
+        if len(arrayEscenas) < 1:
+            return []
+
+        posicionPivot = randint(0, len(arrayEscenas) - 1)
+        pivot = arrayEscenas[posicionPivot]
+        left = []
+        right = []
+        arrayEscenas.pop(posicionPivot)
+
+        for i in range(len(arrayEscenas)):
+            if arrayEscenas[i].getGrandezaTotal() < pivot.getGrandezaTotal():
+                left.append(arrayEscenas[i])
+            else:
+                right.append(arrayEscenas[i])
+
+        return self.sortNLogN(left) + [pivot] + self.sortNLogN(right)
+
+    def quickSort(self):
+        """ Función auxiliar que ayuda a ejecutar el algoritmo quicksort recursivamente """
+        self.escenas = self.sortNLogN(self.escenas)
 
     def sortN(self):
         """ Algoritmo de ordenamiento Counting Sort (Complejidad O(N))  """

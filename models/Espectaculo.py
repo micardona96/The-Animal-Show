@@ -1,3 +1,5 @@
+from random import randint
+
 class Espectaculo:
     def __init__(self,escenas, animales, partes, apertura, n=9, k=3, m=4):
         self.apertura = apertura
@@ -77,6 +79,38 @@ class Espectaculo:
                 print(animal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
             print(minAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
 
+    def sortNxN(self):
+        """ Algoritmo de ordenamiento burbuja (Complejidad O(N^2)) """
+        for i in range(len(self.partes)):
+            for j in range(len(self.partes) - i - 1):
+                if self.partes[j].getGrandezaTotal() > self.partes[j+1].getGrandezaTotal():
+                    parteAux = self.partes[j+1]
+                    self.partes[j+1] = self.partes[j]
+                    self.partes[j] = parteAux
+
+    def sortNLogN(self, arrayPartes):
+        """ Algoritmo de ordenamiento QuickSort con complejidad O(NLogN), pivote seleccionado aleatoriamente """
+        if len(arrayPartes) < 1:
+            return []
+
+        posicionPivot = randint(0, len(arrayPartes) - 1)
+        pivot = arrayPartes[posicionPivot]
+        left = []
+        right = []
+        arrayPartes.pop(posicionPivot)
+
+        for i in range(len(arrayPartes)):
+            if arrayPartes[i].getGrandezaTotal() < pivot.getGrandezaTotal():
+                left.append(arrayPartes[i])
+            else:
+                right.append(arrayPartes[i])
+
+        return self.sortNLogN(left) + [pivot] + self.sortNLogN(right)
+    
+    def quickSort(self):
+        """ Función auxiliar que ayuda a ejecutar el algoritmo quicksort recursivamente """
+        self.partes = self.sortNLogN(self.partes)
+
     def sortN(self):
         """ Algoritmo para ordenar las partes del espectaculo con Complejidad O(n) utilizando el algoritmo CountingSort"""
         maxGrandezaParte = (self.n + (self.n - 1) + (self.n - 2))*self.k
@@ -98,24 +132,31 @@ class Espectaculo:
     def main(self, algoritmo='N'):
         if algoritmo == 'N':
             for escena in self.escenas:
-                escena.sortN()           
+                escena.sortN()
+            for parte in self.partes:
+                parte.sortN()
+            self.apertura.sortN()
+            self.sortN()        
         elif algoritmo == 'NxN':
             for escena in self.escenas:
                 escena.sortNxN()
+            for parte in self.partes:
+                parte.sortNxN()
+            self.apertura.sortNxN()               
+            self.sortNxN()
         elif algoritmo == 'NLogN':
             for escena in self.escenas:
                 escena.quickSort()
+            for parte in self.partes:
+                parte.quickSort()
+            self.apertura.quickSort()
+            self.quickSort()
 
-        self.apertura.sortN()
         
-        for parte in self.partes:
-            parte.sortN()
-
+        
         print('Apertura:')
         print(self.apertura)
         print('\n')
-
-        self.sortN()
         print(self)
 
         self.maxParticipacionAnimal()
