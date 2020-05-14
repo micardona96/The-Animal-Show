@@ -222,8 +222,6 @@ grandeza total por partes para ejecutar el algoritmo sortN (CountingSort) para o
 #### Instrucciones de uso <a name="id24"></a>
 #### Testing <a name="id25"></a>
 
-### Análisis general de resultados  <a name="id26"></a>
-
 ### Solución Estadísticas solicitadas por el gerente del Zoologico
 
 ## Animal que participó en más escenas dentro del espectáculo
@@ -269,6 +267,8 @@ Debido a que se conoce la cantidad de escenas, la cantidad de partes del espect�
 se implementó un método llamado promedioGradezaEspectaculo en la clase Espectáculo que realiza la sumatoria de la grandeza total de todas las escenas y las divide (calculo del promedio) por m*k*2, el cuál indica la cantidad total de escenas que dieron lugar en el espectáculo.
 
 (imagen algoritmo)
+
+### Análisis general de resultados  <a name="id26"></a>
 
 ### Conclusiones del proyecto <a name="id27"></a>
 
