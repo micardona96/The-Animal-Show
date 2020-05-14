@@ -108,8 +108,10 @@ mayor legibilidad ya que los resultados pueden ser muy pequeños en segundos, se
 ### Clases <a name="id7"></a>
 
 
-#### Animal <a name="id99"></a>
+#### _Animal_ <a name="id99"></a>
 [Ir al contexto de la implementación](./models/Animal.py)
+
+
 Clase encargada de crear objetos tipo Animal, estos objetos cuentan con 3 propiedades las cules son:
 
 - Propiedades 
@@ -117,7 +119,7 @@ Clase encargada de crear objetos tipo Animal, estos objetos cuentan con 3 propie
   - **Int** *Grandeza:* Grandeza del animal en el espectaculo.
   - **Int** *Cantidad:* Cantidad de apariciones del animal en las escenas.
 
-#### Escena <a name="id98"></a>
+#### _Escena_ <a name="id98"></a>
 [Ir al contexto de la implementación](./models/Escena.py)
 
 
@@ -134,7 +136,7 @@ Clase encargada de crear objetos tipo Escena, la cual se encarga de agrupar obje
   - **sortN():** Algoritmo de ordenamiento Counting Sort (Complejidad O(N)), se usa para ordenar los animales dentro de las escenas.
   - **sortNLogN():** Algoritmo de ordenamiento Quick Sort (Complejidad O(N log (N))), se usa para ordenar los animales dentro de las escenas.
 
-#### Parte <a name="id97"></a>
+#### _Parte_ <a name="id97"></a>
 [Ir al contexto de la implementación](./models/Parte.py)
 
 Clase encargada de crear objetos tipo Parte,la cual se encarga de agrupar objetos tipo Escena, cuenta con una propiedad y 2 metodos que ayudan a la estructuracion de sus contenedores en el objeto espectaculo.
@@ -146,7 +148,7 @@ Clase encargada de crear objetos tipo Parte,la cual se encarga de agrupar objeto
   - **getGrandezaTotal():** Calculo de la grandeza total de la parte (Complejidad O(N)).
   - **sortN():** Algoritmo de ordenamiento Counting Sort (Complejidad O(N)), se usa para ordenar las escenas dentro de las partes.
   
-#### Espectáculo  <a name="id96"></a>
+#### _Espectáculo_  <a name="id96"></a>
 [Ir al contexto de la implementación](./models/Espectaculo.py)
 
 Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar objetos tipo Parte, cuenta con una 7 propiedades y 7 metodos que despliean los resultados esperados por parte del administrador.
@@ -187,6 +189,10 @@ complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen un
 #### Implementación <a name="id10"></a>
 Esta sera una implementacion generica del algoritmo burbuja, solo es usado para referenciar su implementacion en el proyecto, en cada una de las instancias Animal, Escena, Parte y Espectaculo, toman como guia esta misma implementacion, con variaciones en los llamados a sus propiedades.
 
+***Algoritmo genérico BubbleSort***
+
+[Ir al contexto de la implementación](./test/algoritmos.py#L20)
+
 ```python
 def sortNxN(numeros):
     """ Algoritmo de ordenamiento burbuja (Complejidad O(N^2)) """
@@ -198,7 +204,7 @@ def sortNxN(numeros):
                 numeros[j] = numAux
     return numeros
 ```
-Algoritmo generico Bubble Sort [(ir a contexto de implementacion)](./test/algoritmos.py#L20)
+
 
 Esta función sortNxN es llamada secuencialmente por todos los objetos de las distintas clases que lo implementan en el siguiente orden.
 
@@ -229,6 +235,10 @@ complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen un
 #### Implementación <a name="id16"></a>
 Esta sera una implementacion generica del algoritmo QuickSort, solo es usado para referenciar su implementacion en el proyecto, en cada una de las instancias Animal, Escena, Parte y Espectaculo, toman como guia esta misma implementacion, con variaciones en los llamados a sus propiedades.
 
+***Algoritmo genérico QuickSort***
+
+[Ir al contexto de la implementación](./test/algoritmos.py#L30)
+
 ``` python
 def sortNLogN(numeros):
         if len(numeros) < 1:
@@ -249,7 +259,7 @@ def sortNLogN(numeros):
         return sortNLogN(left) + [pivot] + sortNLogN(right)
 
 ```
-Algoritmo generico QuickSort [(ir a contexto de implementación)](./test/algoritmos.py#L30)
+
 
 Esta función sortNLogN es llamada secuencialmente por todos los objetos de las distintas clases que lo implementan en el siguiente orden.
 
@@ -281,6 +291,10 @@ complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen un
 #### Implementación <a name="id22"></a>
 Esta sera una implementacion generica del algoritmo Counting Sort, solo es usado para referenciar su implementacion en el proyecto, en cada una de las instancias Animal, Escena, Parte y Espectaculo, toman como guia esta misma implementacion, con variaciones en los llamados a sus propiedades.
 
+***Algoritmo genérico CountingSort***
+
+[Ir al contexto de la implementación](./test/algoritmos.py#L4)
+
 ``` python 
 def sortN(numeros):
     outputArray = [None]*len(numeros)
@@ -298,8 +312,6 @@ def sortN(numeros):
 
     return outputArray
 ```
-
-Algoritmo generico Counting Sort [(ir a contexto de implementación)](./test/algoritmos.py#L4)
 
 Esta función sortN es llamada secuencialmente por todos los objetos de las distintas clases que lo implementan en el siguiente orden.
 
