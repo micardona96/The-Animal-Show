@@ -144,6 +144,8 @@ Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar
   - **sortN():**  Algoritmo para ordenar las partes del espectaculo con Complejidad O(n) utilizando el algoritmo CountingSort.
   - **main():**  Funcion que hace la invocaicon de cada uno de los eventos de forma secuencial.
 
+### Archivos y datos de pruebas
+En este apartado se especificaran los datos de prueba y en qué archivo se encuentran para su posterior ejecución
 
 ### Solución O (n²)  <a name="id8"></a>
 Para obtener una solución O (n²) al problema planteado, se realizó un análisis de los respectivos algortimos ya existentes
@@ -222,6 +224,51 @@ grandeza total por partes para ejecutar el algoritmo sortN (CountingSort) para o
 
 ### Análisis general de resultados  <a name="id26"></a>
 
+### Solución Estadísticas solicitadas por el gerente del Zoologico
+
+## Animal que participó en más escenas dentro del espectáculo
+Para obtener el animal que más participo en escenas se hizo uso de lo llamado paso por referencia,
+los animales que participan en el espectáculo son creados una sola vez, por lo tanto, se comparte la misma
+instancia de los animales en todas las escenas.
+
+En cada escena se le suma en uno(1) la propiedad cantidad del objeto Animal, para así, ir contando la cantidad
+de apariciones en escenas.
+
+La complejidad de este mecanismo de conteo es O(1), debido a que en cada escena sólo participan tres(3) animales,
+esto implica que el ciclo for usado para aumentar en 1 la propiedad cantidad del objeto sólo realice operaciones (iteraciones)
+tres veces.
+
+(imagen algoritmo)
+
+## Animal que participó en menos escenas dentro del espectáculo
+Al igual que el Animal que más participó en escenas, se hace uso de la misma idea, sólo que esta vez, en la clase espéctaculo
+existen los métodos minParticipacionAnimal y maxParticipacionAnimal, que ejecuta un ciclo for n(cantidad de animales) veces,
+para encontrar el máximo y el mínimo animal. La complejidad de este algoritmo es O(n), ya que realiza n iteraciones, recorriendo
+todos los animales que participan en espectaculo en busqueda del que participa en más y menos escenas.
+
+(imagen algoritmo)
+
+## Escena de menor grandeza
+Para cumplir con este requerimiento, la clase Escena tiene una propiedad cuyo nombre es totalGrandeza, cada vez
+que se realiza la instanciación de un objeto Escena, este calcula inmediatamente su total grandeza con la suma de las
+grandezas de los animales que participan en la escena, almacenando el valor la propiedad, para luego ser usada en el método
+minGradezaEscena del la clase espectáculo, la cual tiene acceso a todas las escenas y aplica un algritmo con complejidad O(k)
+(con k cantidad de escenas) para encontrar la escena con grandeza total mínima
+
+(imagen algoritmo)
+
+## La escena de mayor grandeza total.
+Al igual que en la escena de menor grandeza, se realiza el mismo procedimiento sólo que esta vez se usa el método de la 
+clase espéctaculo llamado maxGradezaEscena, el cual nos permite calcular la escena con mayor grandeza cuya complejidad
+es O(k)
+
+(imagen algoritmo)
+
+## Promedio de grandeza del espéctaculo
+Debido a que se conoce la cantidad de escenas, la cantidad de partes del espectáculo y los animales que participan en ello,
+se implementó un método llamado promedioGradezaEspectaculo en la clase Espectáculo que realiza la sumatoria de la grandeza total de todas las escenas y las divide (calculo del promedio) por m*k*2, el cuál indica la cantidad total de escenas que dieron lugar en el espectáculo.
+
+(imagen algoritmo)
 
 ### Conclusiones del proyecto <a name="id27"></a>
 
