@@ -89,6 +89,10 @@ La característica que comparten cada objeto (excluyendo el objeto Animal) es qu
 los mismos algortimos de ordenamiento con sus distintas complejidades, para así, poder realizar el ordenamiento secuencial explicado
 anteriormente.
 
+Para el calculo del tiempo de ejecución de los distintos algoritmos, se hará uso del método timeit, perteneciente al módulo timeit
+de la libreria estandar de python, el cual nos ofrece el tiempo de ejecución promedio de una función ejecutandola 200 veces. Para
+mayor legibilidad ya que los resultados pueden ser muy pequeños en segundos, se multiplicarán por 1000 los valores del tiempo.
+
 ### [Clases](./models) <a name="id7"></a>
 
 #### [Animal](./models/Animal.py)  <a name="id99"></a>
