@@ -29,17 +29,15 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
     - [Ejecución y Resultados ](#id12)
     
   - [Solución O (n log n) ](#id14)
-    - [Análisis](#id15)
-    - [Resultados](#id16)
-    - [Aplicativo](#id17)
-    - [Instrucciones de uso](#id18)
-    - [Testing](#id19)
+    - [Análisis y solución](#id15)
+    - [Implementación](#id16)
+    - [Instrucciones de uso](#id17)
+    - [Ejecución y Resultados ](#id18)
   - [Solución O (n)](#id20)
-    - [Análisis](#id21)
-    - [Resultados](#id21)
-    - [Aplicativo](#id23)
-    - [Instrucciones de uso](#id24)
-    - [Testing](#id25)
+    - [Análisis y solución](#id21)
+    - [Implementación](#id22)
+    - [Instrucciones de uso](#id23)
+    - [Ejecución y Resultados ](#id24)
 
   - [Análisis general de resultados ](#id26)
   - [Conclusiones del proyecto](#id27)
@@ -193,7 +191,7 @@ grandeza total por partes para ejecutar el algoritmo sortNxN (QuickSort) para or
 
 ### Solución O (n log n)  <a name="id14"></a>
 
-#### Análisis y solución <a name="id9"></a>
+#### Análisis y solución <a name="id15"></a>
 Para obtener una solución O (n log n) al problema planteado, se realizó un análisis de los respectivos algortimos ya existentes
 que tuvieran esta complejidad, entre los que vimos en el curso, resaltaron especialmente dos(2), MergeSort y QuickSort. Elegimos Quicksort
 con pivote aleatorio debido a la comprensión que teniamos sobre el algoritmo, simplicidad de implementación y a sus buenos resultados (evidenciados) con grupos pequeños de datos.
@@ -201,7 +199,7 @@ con pivote aleatorio debido a la comprensión que teniamos sobre el algoritmo, s
 Como se mencionó en el análisis general, cada clase tiene implementado los mismos algoritmos de ordenamiento con sus distintas
 complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen una función llamada sortNLogN que implementa QuickSort.
 
-#### Implementación <a name="id10"></a>
+#### Implementación <a name="id16"></a>
 
 ``` python
 def sortNLogN(numeros):
@@ -233,16 +231,16 @@ ejecuta el llamada a sortNLogN, ordenando así las partes internamente.
 - Ya por último el objeto instancia de la clase Espéctaculo recibe todas las partes ordenadas por sus respectivas escenas, y hace uso de la
 grandeza total por partes para ejecutar el algoritmo sortNLogN (QuickSort) para ordenar todo el espéctaculo 
 
-#### Instrucciones de uso<a name="id11"></a>
+#### Instrucciones de uso<a name="id17"></a>
 (como llamar al archivo en la ejecuion )
 
-#### Ejecución y Resultados <a name="id12"></a>
+#### Ejecución y Resultados <a name="id18"></a>
 (capturas de pantalla) 
 
 
 ### Solución O (n) <a name="id20"></a>
 
-#### Análisis y solución <a name="id9"></a>
+#### Análisis y solución <a name="id21"></a>
 Para obtener una solución O (n) al problema planteado, se realizó un análisis de los respectivos algortimos ya existentes
 que tuvieran esta complejidad, entre los que vimos en el curso, resaltó especialmente el CountingSort. Elegimos este algoritmo
 debido a que funciona correctamente con rangos de datos definidos, en nuestro caso, el problema nos da los valores de m (cantidad de partes),
@@ -251,7 +249,7 @@ k (cantidad de escenas) y n (cantidad de animales)
 Como se mencionó en el análisis general, cada clase tiene implementado los mismos algoritmos de ordenamiento con sus distintas
 complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen una función llamada sortN que implementa CountingSort.
 
-#### Implementación <a name="id10"></a>
+#### Implementación <a name="id22"></a>
 
 ``` python 
 def sortN(numeros):
@@ -281,10 +279,10 @@ ejecuta el llamada a sortN, ordenando así las partes internamente.
 - Ya por último el objeto instancia de la clase Espéctaculo recibe todas las partes ordenadas por sus respectivas escenas, y hace uso de la
 grandeza total por partes para ejecutar el algoritmo sortN (CountingSort) para ordenar todo el espéctaculo
 
-#### Instrucciones de uso<a name="id11"></a>
+#### Instrucciones de uso<a name="id23"></a>
 (como llamar al archivo en la ejecuion )
 
-#### Ejecución y Resultados <a name="id12"></a>
+#### Ejecución y Resultados <a name="id24"></a>
 (capturas de pantalla) 
 
 ### Solución Estadísticas solicitadas por el gerente del Zoologico
