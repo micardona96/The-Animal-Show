@@ -46,8 +46,8 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
     - [La escena de mayor grandeza total](#id34)
     - [Promedio de grandeza del espéctaculo](#id35)
     
-  - [Análisis general de resultados ](#id26)
-  - [Conclusiones del proyecto](#id27)
+ - [Análisis general de resultados ](#id26)
+ - [Conclusiones del proyecto](#id27)
 
 
 ## Lineamentos The Animal Show <a name="id1"></a>
@@ -61,7 +61,6 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
 
 Es decir, el evento tiene m partes, de las cuales 1 parte es la Gran apertura y que se presenta primero, y luego de ella se presentan las siguientes m − 1 partes, para completar el Gran espectáculo.
 
-> Nota: el criterio de desempate entre dos escenas que tengan la misma grandeza total de escena, se hace tomando la máxima grandeza individual de cada una de las escenas en empate, y se presentan las escenas en orden ascendente según la máxima grandeza individual de las escenas.
 
 ### Características adicionales <a name="id3"></a>
 Adicionalmente, el gerente del The animal show desea saber ciertos datos acerca de su espectáculo: 
@@ -278,7 +277,7 @@ def sortN(numeros):
     return outputArray
 ```
 
-Algoritmo generico Counting Sort [(ir a contexto de implementación](./test/algoritmos.py#L4)
+Algoritmo generico Counting Sort [(ir a contexto de implementación)](./test/algoritmos.py#L4)
 
 Esta función sortN es llamada secuencialmente por todos los objetos de las distintas clases que lo implementan en el siguiente orden.
 
@@ -308,7 +307,30 @@ La complejidad de este mecanismo de conteo es O(1), debido a que en cada escena 
 esto implica que el ciclo for usado para aumentar en 1 la propiedad cantidad del objeto sólo realice operaciones (iteraciones)
 tres veces.
 
-(imagen algoritmo)
+``` python
+
+    def maxParticipacionAnimal(self):
+        """ Algoritmo para calcular los animales con mayor participación en escenas,
+            con Complejidad O(n) (número de animales)"""
+        arrayMaxAnimales = []
+        maxAnimal = self.animales[0]
+        for i in range(1,len(self.animales)):
+            if self.animales[i].cantidad > maxAnimal.cantidad:
+                maxAnimal = self.animales[i]
+            elif self.animales[i].cantidad == maxAnimal.cantidad:
+                arrayMaxAnimales.append(self.animales[i])
+        
+        print('El/Los animales que más partició/participaron en escenas fueron: ')
+        if len(arrayMaxAnimales) == 0:
+            print(maxAnimal.nombre + " con " + str(maxAnimal.cantidad * 2) + " escenas")
+        else:
+            for animal in arrayMaxAnimales:
+                print(animal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
+            print(maxAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
+
+```
+[Ir al conexto de la implementación](./models/Espectaculo.py#L45)
+
 
 #### Animal que participó en menos escenas dentro del espectáculo <a name="id32"></a>
 Al igual que el Animal que más participó en escenas, se hace uso de la misma idea, sólo que esta vez, en la clase espéctaculo
@@ -316,7 +338,30 @@ existen los métodos minParticipacionAnimal y maxParticipacionAnimal, que ejecut
 para encontrar el máximo y el mínimo animal. La complejidad de este algoritmo es O(n), ya que realiza n iteraciones, recorriendo
 todos los animales que participan en espectaculo en busqueda del que participa en más y menos escenas.
 
-(imagen algoritmo)
+``` python
+
+       def minParticipacionAnimal(self):
+        """ Algoritmo para calcular los animales con menor participación en escenas,
+            con Complejidad O(n) (número de animales)"""
+        arrayMinAnimales = []
+        minAnimal = self.animales[0]
+        for i in range(1,len(self.animales)):
+            if self.animales[i].cantidad < minAnimal.cantidad:
+                minAnimal = self.animales[i]
+            elif self.animales[i].cantidad == minAnimal.cantidad:
+                arrayMinAnimales.append(self.animales[i])
+        
+        print('El/Los animales que menos partició/participaron en escenas fueron: ')
+        if len(arrayMinAnimales) == 0:
+            print(minAnimal.nombre + " con " + str(minAnimal.cantidad * 2) + " escenas")
+        else:
+            
+            for animal in arrayMinAnimales:
+                print(animal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
+            print(minAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
+
+```
+[Ir al conexto de la implementación](./models/Espectaculo.py#L63)
 
 #### Escena de menor grandeza <a name="id33"></a>
 Para cumplir con este requerimiento, la clase Escena tiene una propiedad cuyo nombre es totalGrandeza, cada vez
@@ -325,22 +370,68 @@ grandezas de los animales que participan en la escena, almacenando el valor la p
 minGradezaEscena del la clase espectáculo, la cual tiene acceso a todas las escenas y aplica un algritmo con complejidad O(k)
 (con k cantidad de escenas) para encontrar la escena con grandeza total mínima
 
-(imagen algoritmo)
+``` python
+
+    def minGradezaEscena(self):
+        """ Algoritmo para calcular la escena con menor grandeza 
+            con complejidad O(k) (número de escenas)"""
+        minEscena = self.escenas[0]
+        for i in range(1, len(self.escenas)):
+            if self.escenas[i].totalGrandeza < minEscena.totalGrandeza:
+                minEscena = self.escenas[i]
+
+        print('La escena de menor grandeza total fue:')
+        print(minEscena)
+
+```
+[Ir al conexto de la implementación](./models/Espectaculo.py#L35)
+
 
 #### La escena de mayor grandeza total <a name="id34"></a>
 Al igual que en la escena de menor grandeza, se realiza el mismo procedimiento sólo que esta vez se usa el método de la 
 clase espéctaculo llamado maxGradezaEscena, el cual nos permite calcular la escena con mayor grandeza cuya complejidad
 es O(k)
 
-(imagen algoritmo)
+``` python
+
+    def maxGradezaEscena(self):
+        """ Algoritmo para calcular la escena con mayor grandeza 
+            con complejidad O(k) (número de escenas)"""
+        maxEscena = self.escenas[0]
+        for i in range(1, len(self.escenas)):
+            if self.escenas[i].totalGrandeza > maxEscena.totalGrandeza:
+                maxEscena = self.escenas[i]
+
+        print('La escena de mayor grandeza total fue:')
+        print(maxEscena)
+
+```
+[Ir al conexto de la implementación](./models/Espectaculo.py#L25)
 
 #### Promedio de grandeza del espéctaculo <a name="id35"></a>
 Debido a que se conoce la cantidad de escenas, la cantidad de partes del espectáculo y los animales que participan en ello,
 se implementó un método llamado promedioGradezaEspectaculo en la clase Espectáculo que realiza la sumatoria de la grandeza total de todas las escenas y las divide (calculo del promedio) por m*k*2, el cuál indica la cantidad total de escenas que dieron lugar en el espectáculo.
 
-(imagen algoritmo)
+``` python
 
-### Análisis general de resultados  <a name="id26"></a>
+    def promedioGradezaEspectaculo(self):
+        """ Algoritmo para calcular el promedio del espectaculo (escenas) con 
+            complejidad O(k) (número de escenas)"""
+        contador = 0
+        for escena in self.escenas:
+            contador += escena.totalGrandeza
+        contador *= 2
 
-### Conclusiones del proyecto <a name="id27"></a>
+        promedio = contador / (((self.m -1) * self.k) * 2)
+
+        print('El promedio de grandeza total del espectaculo fue de:')
+        print(round(promedio,2))
+
+
+```
+[Ir al conexto de la implementación](./models/Espectaculo.py#L13)
+
+## 👨‍🔬 Análisis general de resultados  <a name="id26"></a>
+
+## 🎉 Conclusiones del proyecto <a name="id27"></a>
 
