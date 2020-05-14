@@ -154,20 +154,22 @@ class Espectaculo:
 
         
         
-        # print('Apertura:')
-        # print(self.apertura)
-        # print('\n')
-        #print(self)
 
-        # self.maxParticipacionAnimal()
-        # print('\n')
-        # self.minParticipacionAnimal()
-        # print('\n')
-        # self.minGradezaEscena()
-        # print('\n')
-        # self.maxGradezaEscena()
-        # print('\n')
-        # self.promedioGradezaEspectaculo()
+    def imprimirResultados(self):
+        print('Apertura:')
+        print(self.apertura)
+        print('\n')
+        print(self)
+
+        self.maxParticipacionAnimal()
+        print('\n')
+        self.minParticipacionAnimal()
+        print('\n')
+        self.minGradezaEscena()
+        print('\n')
+        self.maxGradezaEscena()
+        print('\n')
+        self.promedioGradezaEspectaculo()
 
     def __str__(self):
         description = ''

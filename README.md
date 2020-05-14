@@ -76,6 +76,19 @@ Adicionalmente, el gerente del The animal show desea saber ciertos datos acerca 
 ### Análisis general de la implementación <a name="id6"></a>
 The animal show app hace uso lenguaje de programación Python que permite un paradigma orientados a objetos, además es un lenguaje interpretado, dinámico y su filosofía hace hincapié en la legibilidad de su código.
 
+La forma en que atacamos el problema se basa en dos puntos principales, el primero es la implementación orientada a objetos 
+con python, y la segundad fue el ordenamiento secuencial que se realizó tanto a las escenas, las partes y el espectáculo en general.
+
+Con ordenamiento secuencial nos referimos a ir ordenando desde las partes mas internas en el arbol de objetos (Animal, Escena) hasta las
+partes mas externas (Parte, Espectáculo).
+
+En primera instancia procedimos a ordenar todas las escenas que hacían parte del espectáculo, en este caso, una escena es representada mediante un objeto, la cual incluye todos los métodos de ordenamiento con su diferente complejidad, seguido, ordenamos las partes del espectáculo (objeto), el cúal ya recibe las escenas ordenadas, y para finalizar, ordenamos el Espectáculo recibiendo las partes con todos
+sus objetos internos (escenas) ordenados.
+
+La característica que comparten cada objeto (excluyendo el objeto Animal) es que todos tienen dentro la implementación de su clase
+los mismos algortimos de ordenamiento con sus distintas complejidades, para así, poder realizar el ordenamiento secuencial explicado
+anteriormente.
+
 ### [Clases](./models) <a name="id7"></a>
 
 #### [Animal](./models/Animal.py)  <a name="id99"></a>
@@ -133,6 +146,24 @@ Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar
 
 
 ### Solución O (n²)  <a name="id8"></a>
+Para obtener una solución O (n²) al problema planteado, se realizó un análisis de los respectivos algortimos ya existentes
+que tuvieran esta complejidad y elegimos usar el BubbleSort.
+
+Como se mencionó en el análisis general, cada clase tiene implementado los mismos algoritmos de ordenamiento con sus distintas
+complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen una función llamada sortNxN que implementa BubbleSort.
+
+(Captura Algoritmo)
+
+Esta función sortNxN es llamada secuencialmente por todos los objetos de las distintas clases que lo implementan en el siguiente orden.
+
+- Primero se ejecuta la función para todas las escenas que hacen parte del espectáculo para ordenarlas (Animales por su grandeza)
+- Una vez ordenadas las escenas, las partes obtienen sus respectivas escenas y con base a la grandeza total de todas las escenas
+ejecuta el llamada a sortNxN, ordenando así las partes internamente.
+- Ya por último el objeto instancia de la clase Espéctaculo recibe todas las partes ordenadas por sus respectivas escenas, y hace uso de la
+grandeza total por partes para ejecutar el algoritmo sortNxN (QuickSort) para ordenar todo el espéctaculo 
+
+
+
 #### Análisis <a name="id9"></a>
 #### Resultados <a name="id10"></a>
 #### Aplicativo <a name="id11"></a>
@@ -140,6 +171,23 @@ Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar
 #### Testing <a name="id13"></a>
 
 ### Solución O (n log n)  <a name="id14"></a>
+Para obtener una solución O (n log n) al problema planteado, se realizó un análisis de los respectivos algortimos ya existentes
+que tuvieran esta complejidad, entre los que vimos en el curso, resaltaron especialmente dos(2), MergeSort y QuickSort. Elegimos Quicksort
+con pivote aleatorio debido a la comprensión que teniamos sobre el algoritmo, simplicidad de implementación y a sus buenos resultados (evidenciados) con grupos pequeños de datos.
+
+Como se mencionó en el análisis general, cada clase tiene implementado los mismos algoritmos de ordenamiento con sus distintas
+complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen una función llamada sortNLogN que implementa QuickSort.
+
+(Captura Algoritmo)
+
+Esta función sortNLogN es llamada secuencialmente por todos los objetos de las distintas clases que lo implementan en el siguiente orden.
+
+- Primero se ejecuta la función para todas las escenas que hacen parte del espectáculo para ordenarlas (Animales por su grandeza)
+- Una vez ordenadas las escenas, las partes obtienen sus respectivas escenas y con base a la grandeza total de todas las escenas
+ejecuta el llamada a sortNLogN, ordenando así las partes internamente.
+- Ya por último el objeto instancia de la clase Espéctaculo recibe todas las partes ordenadas por sus respectivas escenas, y hace uso de la
+grandeza total por partes para ejecutar el algoritmo sortNLogN (QuickSort) para ordenar todo el espéctaculo 
+
 #### Análisis <a name="id15"></a>
 #### Resultados <a name="id16"></a>
 #### Aplicativo <a name="id17"></a>
@@ -148,6 +196,24 @@ Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar
 
 
 ### Solución O (n) <a name="id20"></a>
+Para obtener una solución O (n) al problema planteado, se realizó un análisis de los respectivos algortimos ya existentes
+que tuvieran esta complejidad, entre los que vimos en el curso, resaltó especialmente el CountingSort. Elegimos este algoritmo
+debido a que funciona correctamente con rangos de datos definidos, en nuestro caso, el problema nos da los valores de m (cantidad de partes),
+k (cantidad de escenas) y n (cantidad de animales)
+
+Como se mencionó en el análisis general, cada clase tiene implementado los mismos algoritmos de ordenamiento con sus distintas
+complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen una función llamada sortN que implementa CountingSort.
+
+(Captura Algoritmo)
+
+Esta función sortN es llamada secuencialmente por todos los objetos de las distintas clases que lo implementan en el siguiente orden.
+
+- Primero se ejecuta la función para todas las escenas que hacen parte del espectáculo para ordenarlas (Animales por su grandeza)
+- Una vez ordenadas las escenas, las partes obtienen sus respectivas escenas y con base a la grandeza total de todas las escenas
+ejecuta el llamada a sortN, ordenando así las partes internamente.
+- Ya por último el objeto instancia de la clase Espéctaculo recibe todas las partes ordenadas por sus respectivas escenas, y hace uso de la
+grandeza total por partes para ejecutar el algoritmo sortN (CountingSort) para ordenar todo el espéctaculo
+
 #### Análisis <a name="id21"></a>
 #### Resultados <a name="id22"></a>
 #### Aplicativo <a name="id23"></a>
