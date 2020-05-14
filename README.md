@@ -160,6 +160,7 @@ Como se mencionó en el análisis general, cada clase tiene implementado los mis
 complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen una función llamada sortNxN que implementa BubbleSort.
 
 #### Implementación <a name="id10"></a>
+Esta sera una implementacion generica del algoritmo burbuja, solo es usado para referenciar su implementacion en el proyecto, en cada una de las instancias Animal, Escena, Parte y Espectaculo, toman como guia esta misma implementacion, con variaciones en los llamados a sus propiedades.
 
 ```python
 def sortNxN(numeros):
@@ -172,7 +173,7 @@ def sortNxN(numeros):
                 numeros[j] = numAux
     return numeros
 ```
-[Algoritmo generico Bubble Sort (go context) ](https://github.com/micardona96/The-Animal-Show/blob/master/test/algoritmos.py#L20)
+Algoritmo generico Bubble Sort [(ir a contexto de implementacion)](./test/algoritmos.py#L20)
 
 Esta función sortNxN es llamada secuencialmente por todos los objetos de las distintas clases que lo implementan en el siguiente orden.
 
@@ -190,9 +191,9 @@ grandeza total por partes para ejecutar el algoritmo sortNxN (QuickSort) para or
 
 
 
-
-
 ### Solución O (n log n)  <a name="id14"></a>
+
+#### Análisis y solución <a name="id9"></a>
 Para obtener una solución O (n log n) al problema planteado, se realizó un análisis de los respectivos algortimos ya existentes
 que tuvieran esta complejidad, entre los que vimos en el curso, resaltaron especialmente dos(2), MergeSort y QuickSort. Elegimos Quicksort
 con pivote aleatorio debido a la comprensión que teniamos sobre el algoritmo, simplicidad de implementación y a sus buenos resultados (evidenciados) con grupos pequeños de datos.
@@ -200,7 +201,29 @@ con pivote aleatorio debido a la comprensión que teniamos sobre el algoritmo, s
 Como se mencionó en el análisis general, cada clase tiene implementado los mismos algoritmos de ordenamiento con sus distintas
 complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen una función llamada sortNLogN que implementa QuickSort.
 
-(Captura Algoritmo)
+#### Implementación <a name="id10"></a>
+
+``` python
+def sortNLogN(numeros):
+        if len(numeros) < 1:
+            return []
+
+        posicionPivot = randint(0, len(numeros) - 1)
+        pivot = numeros[posicionPivot]
+        left = []
+        right = []
+        numeros.pop(posicionPivot)
+
+        for i in range(len(numeros)):
+            if numeros[i] < pivot:
+                left.append(numeros[i])
+            else:
+                right.append(numeros[i])
+
+        return sortNLogN(left) + [pivot] + sortNLogN(right)
+
+```
+Algoritmo generico QuickSort [(ir a contexto de implementación)](./test/algoritmos.py#L30)
 
 Esta función sortNLogN es llamada secuencialmente por todos los objetos de las distintas clases que lo implementan en el siguiente orden.
 
@@ -210,14 +233,16 @@ ejecuta el llamada a sortNLogN, ordenando así las partes internamente.
 - Ya por último el objeto instancia de la clase Espéctaculo recibe todas las partes ordenadas por sus respectivas escenas, y hace uso de la
 grandeza total por partes para ejecutar el algoritmo sortNLogN (QuickSort) para ordenar todo el espéctaculo 
 
-#### Análisis <a name="id15"></a>
-#### Resultados <a name="id16"></a>
-#### Aplicativo <a name="id17"></a>
-#### Instrucciones de uso <a name="id18"></a>
-#### Testing <a name="id19"></a>
+#### Instrucciones de uso<a name="id11"></a>
+(como llamar al archivo en la ejecuion )
+
+#### Ejecución y Resultados <a name="id12"></a>
+(capturas de pantalla) 
 
 
 ### Solución O (n) <a name="id20"></a>
+
+#### Análisis y solución <a name="id9"></a>
 Para obtener una solución O (n) al problema planteado, se realizó un análisis de los respectivos algortimos ya existentes
 que tuvieran esta complejidad, entre los que vimos en el curso, resaltó especialmente el CountingSort. Elegimos este algoritmo
 debido a que funciona correctamente con rangos de datos definidos, en nuestro caso, el problema nos da los valores de m (cantidad de partes),
@@ -226,7 +251,27 @@ k (cantidad de escenas) y n (cantidad de animales)
 Como se mencionó en el análisis general, cada clase tiene implementado los mismos algoritmos de ordenamiento con sus distintas
 complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen una función llamada sortN que implementa CountingSort.
 
-(Captura Algoritmo)
+#### Implementación <a name="id10"></a>
+
+``` python 
+def sortN(numeros):
+    outputArray = [None]*len(numeros)
+    countArray = [0]*100
+
+    for numero in numeros:
+        countArray[numero - 1] += 1
+
+    for i in range(1,len(countArray)):
+        countArray[i] += countArray[i-1]
+
+    for i in range(len(numeros) -1, -1, -1):
+        outputArray[countArray[numeros[i] - 1] - 1] = numeros[i]
+        countArray[numeros[i] - 1] -= 1
+
+    return outputArray
+```
+
+Algoritmo generico Counting Sort [(ir a contexto de implementación](./test/algoritmos.py#L4)
 
 Esta función sortN es llamada secuencialmente por todos los objetos de las distintas clases que lo implementan en el siguiente orden.
 
@@ -236,11 +281,11 @@ ejecuta el llamada a sortN, ordenando así las partes internamente.
 - Ya por último el objeto instancia de la clase Espéctaculo recibe todas las partes ordenadas por sus respectivas escenas, y hace uso de la
 grandeza total por partes para ejecutar el algoritmo sortN (CountingSort) para ordenar todo el espéctaculo
 
-#### Análisis <a name="id21"></a>
-#### Resultados <a name="id22"></a>
-#### Aplicativo <a name="id23"></a>
-#### Instrucciones de uso <a name="id24"></a>
-#### Testing <a name="id25"></a>
+#### Instrucciones de uso<a name="id11"></a>
+(como llamar al archivo en la ejecuion )
+
+#### Ejecución y Resultados <a name="id12"></a>
+(capturas de pantalla) 
 
 ### Solución Estadísticas solicitadas por el gerente del Zoologico
 
