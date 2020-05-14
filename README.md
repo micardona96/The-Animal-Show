@@ -9,7 +9,7 @@
 Este proyecto se basa en la construcción de un software de ordenamiento que permita gestionar el itinerario y orden de prestación para el The animal show. La construcción del software está fundamentada en el análisis de complejidad de las escenas y partes del show, haciendo que en cada escena esta ordenada, tal que la aparición de los animales sea según su grandeza, además las partes del show también estarán ordenadas de forma ascendente, permitiendo que cada escena será mas grande que la anterior. Tomando en cuenta esto, disponemos de un espectáculo maravilloso.
 
 **Índice**   
-- [Lineamentos The Animal Show](#id1)
+- [Lineamientos The Animal Show](#id1)
   - [Descripción](#id2)
   - [Características adicionales](#id3)
   - [Requerimientos de optimización](#id4)
@@ -50,7 +50,10 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
  - [Conclusiones del proyecto](#id27)
 
 
-## Lineamentos The Animal Show <a name="id1"></a>
+---
+
+
+## Lineamientos The Animal Show <a name="id1"></a>
 ### Descripción <a name="id2"></a>
 - The animal show contará con n animales como participantes del espectáculo. Además, el evento consistir a en m partes.
 - Una primera parte: Una gran apertura del evento, que consiste en (m−1) ∗k escenas, donde en cada escena participan 3 animales distintos.
@@ -76,6 +79,8 @@ Adicionalmente, el gerente del The animal show desea saber ciertos datos acerca 
 2. [Plantear una solución al problema cuya complejidad sea O (n log(n)) ](#id14)
 3. [Plantear una solución al problema cuya complejidad sea O (n)](#id20)
 
+---
+
 ## 🚀 Reporte The Animal Show <a name="id5"></a>
 ### Análisis general de la implementación <a name="id6"></a>
 The animal show app hace uso lenguaje de programación Python que permite un paradigma orientados a objetos, además es un lenguaje interpretado, dinámico y su filosofía hace hincapié en la legibilidad de su código.
@@ -96,6 +101,9 @@ anteriormente.
 Para el calculo del tiempo de ejecución de los distintos algoritmos, se hará uso del método timeit, perteneciente al módulo timeit
 de la libreria estandar de python, el cual nos ofrece el tiempo de ejecución promedio de una función ejecutandola 200 veces. Para
 mayor legibilidad ya que los resultados pueden ser muy pequeños en segundos, se multiplicarán por 1000 los valores del tiempo.
+
+---
+
 
 ### [Clases](./models) <a name="id7"></a>
 
@@ -152,8 +160,12 @@ Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar
   - **sortN():**  Algoritmo para ordenar las partes del espectaculo con Complejidad O(n) utilizando el algoritmo CountingSort.
   - **main():**  Funcion que hace la invocaicon de cada uno de los eventos de forma secuencial.
 
+---
+
 ### Archivos y datos de pruebas
 En este apartado se especificaran los datos de prueba y en qué archivo se encuentran para su posterior ejecución
+
+---
 
 ### Solución O (n²)  <a name="id8"></a>
 #### Análisis y solución <a name="id9"></a>
@@ -193,7 +205,7 @@ grandeza total por partes para ejecutar el algoritmo sortNxN (QuickSort) para or
 #### Ejecución y Resultados <a name="id12"></a>
 (capturas de pantalla) 
 
-
+---
 
 ### Solución O (n log n)  <a name="id14"></a>
 
@@ -244,6 +256,7 @@ grandeza total por partes para ejecutar el algoritmo sortNLogN (QuickSort) para 
 #### Ejecución y Resultados <a name="id18"></a>
 (capturas de pantalla) 
 
+---
 
 ### Solución O (n) <a name="id20"></a>
 
@@ -293,6 +306,8 @@ grandeza total por partes para ejecutar el algoritmo sortN (CountingSort) para o
 #### Ejecución y Resultados <a name="id24"></a>
 (capturas de pantalla) 
 
+---
+
 ### Solución Estadísticas solicitadas por el gerente del Zoologico <a name="id30"></a>
 
 #### Animal que participó en más escenas dentro del espectáculo <a name="id31"></a>
@@ -331,6 +346,7 @@ tres veces.
 ```
 [Ir al conexto de la implementación](./models/Espectaculo.py#L45)
 
+---
 
 #### Animal que participó en menos escenas dentro del espectáculo <a name="id32"></a>
 Al igual que el Animal que más participó en escenas, se hace uso de la misma idea, sólo que esta vez, en la clase espéctaculo
@@ -363,6 +379,8 @@ todos los animales que participan en espectaculo en busqueda del que participa e
 ```
 [Ir al conexto de la implementación](./models/Espectaculo.py#L63)
 
+---
+
 #### Escena de menor grandeza <a name="id33"></a>
 Para cumplir con este requerimiento, la clase Escena tiene una propiedad cuyo nombre es totalGrandeza, cada vez
 que se realiza la instanciación de un objeto Escena, este calcula inmediatamente su total grandeza con la suma de las
@@ -386,6 +404,8 @@ minGradezaEscena del la clase espectáculo, la cual tiene acceso a todas las esc
 ```
 [Ir al conexto de la implementación](./models/Espectaculo.py#L35)
 
+---
+
 
 #### La escena de mayor grandeza total <a name="id34"></a>
 Al igual que en la escena de menor grandeza, se realiza el mismo procedimiento sólo que esta vez se usa el método de la 
@@ -407,6 +427,9 @@ es O(k)
 
 ```
 [Ir al conexto de la implementación](./models/Espectaculo.py#L25)
+
+---
+
 
 #### Promedio de grandeza del espéctaculo <a name="id35"></a>
 Debido a que se conoce la cantidad de escenas, la cantidad de partes del espectáculo y los animales que participan en ello,
@@ -431,7 +454,15 @@ se implementó un método llamado promedioGradezaEspectaculo en la clase Espect�
 ```
 [Ir al conexto de la implementación](./models/Espectaculo.py#L13)
 
+---
+
+
 ## 👨‍🔬 Análisis general de resultados  <a name="id26"></a>
+
+
+---
+
+
 
 ## 🎉 Conclusiones del proyecto <a name="id27"></a>
 
