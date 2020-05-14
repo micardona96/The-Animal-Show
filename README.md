@@ -53,7 +53,7 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
 ---
 
 
-## Lineamientos The Animal Show <a name="id1"></a>
+## 📏 Lineamientos The Animal Show <a name="id1"></a>
 ### Descripción <a name="id2"></a>
 - The animal show contará con n animales como participantes del espectáculo. Además, el evento consistir a en m partes.
 - Una primera parte: Una gran apertura del evento, que consiste en (m−1) ∗k escenas, donde en cada escena participan 3 animales distintos.
@@ -105,9 +105,11 @@ mayor legibilidad ya que los resultados pueden ser muy pequeños en segundos, se
 ---
 
 
-### [Clases](./models) <a name="id7"></a>
+### Clases <a name="id7"></a>
 
-#### [Animal](./models/Animal.py)  <a name="id99"></a>
+
+#### Animal <a name="id99"></a>
+[Ir al contexto de la implementación](./models/Animal.py)
 Clase encargada de crear objetos tipo Animal, estos objetos cuentan con 3 propiedades las cules son:
 
 - Propiedades 
@@ -115,7 +117,10 @@ Clase encargada de crear objetos tipo Animal, estos objetos cuentan con 3 propie
   - **Int** *Grandeza:* Grandeza del animal en el espectaculo.
   - **Int** *Cantidad:* Cantidad de apariciones del animal en las escenas.
 
-#### [Escena](./models/Escena.py) <a name="id98"></a>
+#### Escena <a name="id98"></a>
+[Ir al contexto de la implementación](./models/Escena.py)
+
+
 Clase encargada de crear objetos tipo Escena, la cual se encarga de agrupar objetos tipo animal, cuenta con dos propiedades y 5 metodos que ayudan a la estructuracion de sus contenedores en el objeto parte.
 
 - Propiedades 
@@ -129,7 +134,9 @@ Clase encargada de crear objetos tipo Escena, la cual se encarga de agrupar obje
   - **sortN():** Algoritmo de ordenamiento Counting Sort (Complejidad O(N)), se usa para ordenar los animales dentro de las escenas.
   - **sortNLogN():** Algoritmo de ordenamiento Quick Sort (Complejidad O(N log (N))), se usa para ordenar los animales dentro de las escenas.
 
-#### [Parte](./models/Parte.py) <a name="id97"></a>
+#### Parte <a name="id97"></a>
+[Ir al contexto de la implementación](./models/Parte.py)
+
 Clase encargada de crear objetos tipo Parte,la cual se encarga de agrupar objetos tipo Escena, cuenta con una propiedad y 2 metodos que ayudan a la estructuracion de sus contenedores en el objeto espectaculo.
 
 - Propiedades 
@@ -139,7 +146,9 @@ Clase encargada de crear objetos tipo Parte,la cual se encarga de agrupar objeto
   - **getGrandezaTotal():** Calculo de la grandeza total de la parte (Complejidad O(N)).
   - **sortN():** Algoritmo de ordenamiento Counting Sort (Complejidad O(N)), se usa para ordenar las escenas dentro de las partes.
   
-#### [Espectáculo](./models/Espectaculo.py)  <a name="id96"></a>
+#### Espectáculo  <a name="id96"></a>
+[Ir al contexto de la implementación](./models/Espectaculo.py)
+
 Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar objetos tipo Parte, cuenta con una 7 propiedades y 7 metodos que despliean los resultados esperados por parte del administrador.
 
 - Propiedades 
@@ -344,7 +353,7 @@ tres veces.
             print(maxAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
 
 ```
-[Ir al conexto de la implementación](./models/Espectaculo.py#L45)
+[Ir al contexto de la implementación](./models/Espectaculo.py#L45)
 
 ---
 
@@ -377,7 +386,7 @@ todos los animales que participan en espectaculo en busqueda del que participa e
             print(minAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
 
 ```
-[Ir al conexto de la implementación](./models/Espectaculo.py#L63)
+[Ir al contexto de la implementación](./models/Espectaculo.py#L63)
 
 ---
 
@@ -402,7 +411,7 @@ minGradezaEscena del la clase espectáculo, la cual tiene acceso a todas las esc
         print(minEscena)
 
 ```
-[Ir al conexto de la implementación](./models/Espectaculo.py#L35)
+[Ir al contexto de la implementación](./models/Espectaculo.py#L35)
 
 ---
 
@@ -426,7 +435,7 @@ es O(k)
         print(maxEscena)
 
 ```
-[Ir al conexto de la implementación](./models/Espectaculo.py#L25)
+[Ir al contexto de la implementación](./models/Espectaculo.py#L25)
 
 ---
 
