@@ -38,7 +38,14 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
     - [Implementación](#id22)
     - [Instrucciones de uso](#id23)
     - [Ejecución y Resultados ](#id24)
-
+    
+  - [Solución Estadísticas solicitadas por el gerente del Zoologico](#id30)
+    - [Animal que participó en más escenas dentro del espectáculo](#id31)
+    - [Animal que participó en menos escenas dentro del espectáculo](#id32)
+    - [Escena de menor grandeza](#id33)
+    - [La escena de mayor grandeza total](#id34)
+    - [Promedio de grandeza del espéctaculo](#id35)
+    
   - [Análisis general de resultados ](#id26)
   - [Conclusiones del proyecto](#id27)
 
@@ -200,6 +207,7 @@ Como se mencionó en el análisis general, cada clase tiene implementado los mis
 complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen una función llamada sortNLogN que implementa QuickSort.
 
 #### Implementación <a name="id16"></a>
+Esta sera una implementacion generica del algoritmo QuickSort, solo es usado para referenciar su implementacion en el proyecto, en cada una de las instancias Animal, Escena, Parte y Espectaculo, toman como guia esta misma implementacion, con variaciones en los llamados a sus propiedades.
 
 ``` python
 def sortNLogN(numeros):
@@ -250,6 +258,7 @@ Como se mencionó en el análisis general, cada clase tiene implementado los mis
 complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen una función llamada sortN que implementa CountingSort.
 
 #### Implementación <a name="id22"></a>
+Esta sera una implementacion generica del algoritmo Counting Sort, solo es usado para referenciar su implementacion en el proyecto, en cada una de las instancias Animal, Escena, Parte y Espectaculo, toman como guia esta misma implementacion, con variaciones en los llamados a sus propiedades.
 
 ``` python 
 def sortN(numeros):
@@ -285,9 +294,9 @@ grandeza total por partes para ejecutar el algoritmo sortN (CountingSort) para o
 #### Ejecución y Resultados <a name="id24"></a>
 (capturas de pantalla) 
 
-### Solución Estadísticas solicitadas por el gerente del Zoologico
+### Solución Estadísticas solicitadas por el gerente del Zoologico <a name="id30"></a>
 
-#### Animal que participó en más escenas dentro del espectáculo
+#### Animal que participó en más escenas dentro del espectáculo <a name="id31"></a>
 Para obtener el animal que más participo en escenas se hizo uso de lo llamado paso por referencia,
 los animales que participan en el espectáculo son creados una sola vez, por lo tanto, se comparte la misma
 instancia de los animales en todas las escenas.
@@ -301,7 +310,7 @@ tres veces.
 
 (imagen algoritmo)
 
-#### Animal que participó en menos escenas dentro del espectáculo
+#### Animal que participó en menos escenas dentro del espectáculo <a name="id32"></a>
 Al igual que el Animal que más participó en escenas, se hace uso de la misma idea, sólo que esta vez, en la clase espéctaculo
 existen los métodos minParticipacionAnimal y maxParticipacionAnimal, que ejecuta un ciclo for n(cantidad de animales) veces,
 para encontrar el máximo y el mínimo animal. La complejidad de este algoritmo es O(n), ya que realiza n iteraciones, recorriendo
@@ -309,7 +318,7 @@ todos los animales que participan en espectaculo en busqueda del que participa e
 
 (imagen algoritmo)
 
-#### Escena de menor grandeza
+#### Escena de menor grandeza <a name="id33"></a>
 Para cumplir con este requerimiento, la clase Escena tiene una propiedad cuyo nombre es totalGrandeza, cada vez
 que se realiza la instanciación de un objeto Escena, este calcula inmediatamente su total grandeza con la suma de las
 grandezas de los animales que participan en la escena, almacenando el valor la propiedad, para luego ser usada en el método
@@ -318,14 +327,14 @@ minGradezaEscena del la clase espectáculo, la cual tiene acceso a todas las esc
 
 (imagen algoritmo)
 
-#### La escena de mayor grandeza total.
+#### La escena de mayor grandeza total <a name="id34"></a>
 Al igual que en la escena de menor grandeza, se realiza el mismo procedimiento sólo que esta vez se usa el método de la 
 clase espéctaculo llamado maxGradezaEscena, el cual nos permite calcular la escena con mayor grandeza cuya complejidad
 es O(k)
 
 (imagen algoritmo)
 
-#### Promedio de grandeza del espéctaculo
+#### Promedio de grandeza del espéctaculo <a name="id35"></a>
 Debido a que se conoce la cantidad de escenas, la cantidad de partes del espectáculo y los animales que participan en ello,
 se implementó un método llamado promedioGradezaEspectaculo en la clase Espectáculo que realiza la sumatoria de la grandeza total de todas las escenas y las divide (calculo del promedio) por m*k*2, el cuál indica la cantidad total de escenas que dieron lugar en el espectáculo.
 
