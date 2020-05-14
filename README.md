@@ -23,11 +23,11 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
       - [Espectáculo](#id96)
     
   - [Solución O (n²)](#id8)
-    - [Análisis](#id9)
-    - [Resultados](#id10)
-    - [Aplicativo](#id11)
-    - [Instrucciones de uso](#id12)
-    - [Testing](#id13)
+    - [Análisis y solución](#id9)
+    - [Implementación](#id10)
+    - [Instrucciones de uso](#id11)
+    - [Ejecución y Resultados ](#id12)
+    
   - [Solución O (n log n) ](#id14)
     - [Análisis](#id15)
     - [Resultados](#id16)
@@ -152,13 +152,27 @@ Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar
 En este apartado se especificaran los datos de prueba y en qué archivo se encuentran para su posterior ejecución
 
 ### Solución O (n²)  <a name="id8"></a>
+#### Análisis y solución <a name="id9"></a>
 Para obtener una solución O (n²) al problema planteado, se realizó un análisis de los respectivos algortimos ya existentes
 que tuvieran esta complejidad y elegimos usar el BubbleSort.
 
 Como se mencionó en el análisis general, cada clase tiene implementado los mismos algoritmos de ordenamiento con sus distintas
 complejidades, en este caso, los objetos (Escena, Parte, Espéctaculo) tienen una función llamada sortNxN que implementa BubbleSort.
 
-(Captura Algoritmo)
+#### Implementación <a name="id10"></a>
+
+```python
+def sortNxN(numeros):
+    """ Algoritmo de ordenamiento burbuja (Complejidad O(N^2)) """
+    for i in range(len(numeros)):
+        for j in range(len(numeros) - i - 1):
+            if numeros[j] > numeros[j+1]:
+                numAux = numeros[j+1]
+                numeros[j+1] = numeros[j]
+                numeros[j] = numAux
+    return numeros
+```
+[Algoritmo generico Bubble Sort (go context) ](https://github.com/micardona96/The-Animal-Show/blob/master/test/algoritmos.py#L20)
 
 Esta función sortNxN es llamada secuencialmente por todos los objetos de las distintas clases que lo implementan en el siguiente orden.
 
@@ -168,13 +182,15 @@ ejecuta el llamada a sortNxN, ordenando así las partes internamente.
 - Ya por último el objeto instancia de la clase Espéctaculo recibe todas las partes ordenadas por sus respectivas escenas, y hace uso de la
 grandeza total por partes para ejecutar el algoritmo sortNxN (QuickSort) para ordenar todo el espéctaculo 
 
+#### Instrucciones de uso<a name="id11"></a>
+(como llamar al archivo en la ejecuion )
+
+#### Ejecución y Resultados <a name="id12"></a>
+(capturas de pantalla) 
 
 
-#### Análisis <a name="id9"></a>
-#### Resultados <a name="id10"></a>
-#### Aplicativo <a name="id11"></a>
-#### Instrucciones de uso<a name="id12"></a>
-#### Testing <a name="id13"></a>
+
+
 
 ### Solución O (n log n)  <a name="id14"></a>
 Para obtener una solución O (n log n) al problema planteado, se realizó un análisis de los respectivos algortimos ya existentes
