@@ -109,7 +109,7 @@ mayor legibilidad ya que los resultados pueden ser muy pequeños en segundos, se
 
 
 #### _Animal_ <a name="id99"></a>
-[Ir al contexto de la implementación](./models/Animal.py)
+[Ir al contexto de la implementación](./lib/models/Animal.py)
 
 
 Clase encargada de crear objetos tipo Animal, estos objetos cuentan con 3 propiedades las cules son:
@@ -120,7 +120,7 @@ Clase encargada de crear objetos tipo Animal, estos objetos cuentan con 3 propie
   - **Int** *Cantidad:* Cantidad de apariciones del animal en las escenas.
 
 #### _Escena_ <a name="id98"></a>
-[Ir al contexto de la implementación](./models/Escena.py)
+[Ir al contexto de la implementación](./lib/models/Escena.py)
 
 
 Clase encargada de crear objetos tipo Escena, la cual se encarga de agrupar objetos tipo animal, cuenta con dos propiedades y 5 metodos que ayudan a la estructuracion de sus contenedores en el objeto parte.
@@ -137,7 +137,7 @@ Clase encargada de crear objetos tipo Escena, la cual se encarga de agrupar obje
   - **sortNLogN():** Algoritmo de ordenamiento Quick Sort (Complejidad O(N log (N))), se usa para ordenar los animales dentro de las escenas.
 
 #### _Parte_ <a name="id97"></a>
-[Ir al contexto de la implementación](./models/Parte.py)
+[Ir al contexto de la implementación](./lib/models/Parte.py)
 
 Clase encargada de crear objetos tipo Parte,la cual se encarga de agrupar objetos tipo Escena, cuenta con una propiedad y 2 metodos que ayudan a la estructuracion de sus contenedores en el objeto espectaculo.
 
@@ -149,7 +149,7 @@ Clase encargada de crear objetos tipo Parte,la cual se encarga de agrupar objeto
   - **sortN():** Algoritmo de ordenamiento Counting Sort (Complejidad O(N)), se usa para ordenar las escenas dentro de las partes.
   
 #### _Espectáculo_  <a name="id96"></a>
-[Ir al contexto de la implementación](./models/Espectaculo.py)
+[Ir al contexto de la implementación](./lib/models/Espectaculo.py)
 
 Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar objetos tipo Parte, cuenta con una 7 propiedades y 7 metodos que despliean los resultados esperados por parte del administrador.
 
@@ -365,7 +365,7 @@ tres veces.
             print(maxAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
 
 ```
-[Ir al contexto de la implementación](./models/Espectaculo.py#L45)
+[Ir al contexto de la implementación](./lib/models/Espectaculo.py#L45)
 
 ---
 
@@ -398,7 +398,7 @@ todos los animales que participan en espectaculo en busqueda del que participa e
             print(minAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
 
 ```
-[Ir al contexto de la implementación](./models/Espectaculo.py#L63)
+[Ir al contexto de la implementación](./lib/models/Espectaculo.py#L63)
 
 ---
 
@@ -423,7 +423,7 @@ minGradezaEscena del la clase espectáculo, la cual tiene acceso a todas las esc
         print(minEscena)
 
 ```
-[Ir al contexto de la implementación](./models/Espectaculo.py#L35)
+[Ir al contexto de la implementación](./lib/models/Espectaculo.py#L35)
 
 ---
 
@@ -447,7 +447,7 @@ es O(k)
         print(maxEscena)
 
 ```
-[Ir al contexto de la implementación](./models/Espectaculo.py#L25)
+[Ir al contexto de la implementación](./lib/models/Espectaculo.py#L25)
 
 ---
 
@@ -473,7 +473,7 @@ se implementó un método llamado promedioGradezaEspectaculo en la clase Espect�
 
 
 ```
-[Ir al conexto de la implementación](./models/Espectaculo.py#L13)
+[Ir al conexto de la implementación](./lib/models/Espectaculo.py#L13)
 
 ---
 
