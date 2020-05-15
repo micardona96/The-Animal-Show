@@ -490,11 +490,11 @@ se implementó un método llamado promedioGradezaEspectaculo en la clase Espect�
 
 
 ## 💻 Correr script online <a name="id100"></a>
-[Ir al conexto de la implementación online](https://repl.it/@MiguelCardona/The-Animal-Show)
+[Ir a la implementación online](https://repl.it/@MiguelCardona/The-Animal-Show)
 Puedes correr la implementcion desde el navegador haciendo uso de una maquina virtual de linux; con la plataforma [repl.it](https://repl.it/).
 
 ### Comentarios anexos
-Esta implementacion (software) requiere tener python3.  ***En maquinas macO se pueden presenta errores por la implementacion integrada de python 2.7 del sistema operativo.*** Recomendamos el uso de la consola de intepretación de Visual Studio Code, o en su defecto usar el interpretador online.
+Esta implementacion (software) requiere tener python3.  ***En maquinas macOS se pueden presenta errores por la implementacion integrada de python 2.7 del sistema operativo.*** Recomendamos el uso de la consola de intepretación de Visual Studio Code, o en su defecto usar el interpretador online.
 
 
 
