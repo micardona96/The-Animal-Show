@@ -1,68 +1,40 @@
-from models.Animal import Animal
-from models.Escena import Escena
-from models.Espectaculo import Espectaculo
-from models.Parte import Parte
-from timeit import timeit
+#!/usr/bin/python
+import os
+import sys
 
-capibara = Animal('Capibara', 1)
-loro = Animal('Loro', 2)
-caiman = Animal('Caimán', 3)
-boa = Animal('Boa', 4)
-cocodrilo = Animal('Cocodrilo', 5)
-cebra = Animal('Cebra', 6)
-pantera = Animal('Pantera negra', 7)
-tigre = Animal('Tigre', 8)
-leon = Animal('León', 9)
+if (sys.argv[1] == 'small'):
+    os.system("py ./lib/small.py")
 
-Escena.n = 9
-Parte.n = 9
+elif (sys.argv[1] == 'medium'):
+    os.system("py ./lib/medium.py")
+
+elif (sys.argv[1] == 'large'):
+    os.system("py ./lib/large.py")
+
+elif (sys.argv[1] == 'custom'):
+    os.system("py ./lib/custom.py")
 
 
-escena1 = Escena([caiman, capibara, loro])
-escena2 = Escena([tigre, loro, capibara])
-escena3 = Escena([tigre, cebra, pantera])
-escena4 = Escena([pantera, cocodrilo, loro])
-escena5 = Escena([leon, pantera, cebra])
-escena6 = Escena([cocodrilo, capibara, loro])
-escena7 = Escena([boa, caiman, capibara])
-escena8 = Escena([leon, caiman, loro])
-escena9 = Escena([leon, cocodrilo, boa])
-
-parteApertura = Parte([escena1,escena7,escena6,escena4,escena2,escena8,escena9,escena5,escena3])
-Escena.escenas = parteApertura.escenas
-
-parte1 = Parte([escena1, escena2, escena3])
-parte2 = Parte([escena4, escena5, escena6])
-parte3 = Parte([escena7, escena8, escena9])
+elif (sys.argv[1] == 'run-test'):
+    if len(sys.argv) == 3:
+        os.system("py ./test/algoritmos.py " + sys.argv[2])
+    else:
+        print('\033[91m' + '\nError: ' + '\033[0m' + ' run-test requires an Int argument. \n\ttry: py main.py run-test 100 \n')
 
 
-print('\n')
-
-espectaculo = Espectaculo(
-                        animales=[capibara, loro, caiman, boa, cocodrilo, cebra, pantera, tigre, leon],
-                        partes=[parte1, parte2, parte3], 
-                        apertura=parteApertura, 
-                        escenas=[escena1, escena2, escena3, escena4, escena5, escena6, escena7, escena8, escena9])
-
-
-espectaculo.main(algoritmo='NLogN')
-espectaculo.imprimirResultados()
-
-print('\n')
-
-print('NxN')
-resultado3=timeit("espectaculo.main(algoritmo='NxN')",
-                 globals = globals(), number = 200)
-print(resultado3 * 1000)
-
-print('NLogN')
-resultado2=timeit("espectaculo.main(algoritmo='NLogN')",
-                 globals = globals(), number = 200)
-print(resultado2 * 1000)
-
-print('N')
-resultado1=timeit("espectaculo.main(algoritmo='N')",
-                 globals = globals(), number = 200)
-print(resultado1 * 1000)
+elif (sys.argv[1] == 'help'):
+    print('\033[94m' + '\n---  THE ANIMAL SHOW CLI ---\n' + '\033[0m')
+    print("Usage:  py main.py [command] \n ")
+    print("Commands:")
+    print(
+        "  run-test [int]: \t  performance tests and comparisons; with complexities N, NlogN, NxN\n")
+    print("  small: \t \t  example with a small data instance  n=6, m=3 ,k=2")
+    print("  medium: \t \t  example with a medium data instance n=9, m=4 ,k=3")
+    print("  large: \t \t  example with a large data instance  n=20, m=6 ,k=10\n")
+    print("  custom: \t \t  example with a custom data instance n=?, m=? ,k=?")
+    print("  \t \t  \t * in the case of custom, modify the custom.py in the path ./lib/custom.py \n")
 
 
+else:
+    print(
+        '\033[91m' + '\nError: ' + '\033[0m' + sys.argv[1] + ' is not a The Animal Show command. \n')
