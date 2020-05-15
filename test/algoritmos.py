@@ -1,21 +1,24 @@
 from random import randint
 from timeit import timeit
+import sys
+
 
 def sortN(numeros):
     outputArray = [None]*len(numeros)
-    countArray = [0]*100
+    countArray = [0]*int(sys.argv[1])
 
     for numero in numeros:
         countArray[numero - 1] += 1
 
-    for i in range(1,len(countArray)):
+    for i in range(1, len(countArray)):
         countArray[i] += countArray[i-1]
 
-    for i in range(len(numeros) -1, -1, -1):
+    for i in range(len(numeros) - 1, -1, -1):
         outputArray[countArray[numeros[i] - 1] - 1] = numeros[i]
         countArray[numeros[i] - 1] -= 1
 
     return outputArray
+
 
 def sortNxN(numeros):
     """ Algoritmo de ordenamiento burbuja (Complejidad O(N^2)) """
@@ -27,33 +30,38 @@ def sortNxN(numeros):
                 numeros[j] = numAux
     return numeros
 
+
 def sortNLogN(numeros):
-        if len(numeros) < 1:
-            return []
+    if len(numeros) < 1:
+        return []
 
-        posicionPivot = randint(0, len(numeros) - 1)
-        pivot = numeros[posicionPivot]
-        left = []
-        right = []
-        numeros.pop(posicionPivot)
+    posicionPivot = randint(0, len(numeros) - 1)
+    pivot = numeros[posicionPivot]
+    left = []
+    right = []
+    numeros.pop(posicionPivot)
 
-        for i in range(len(numeros)):
-            if numeros[i] < pivot:
-                left.append(numeros[i])
-            else:
-                right.append(numeros[i])
+    for i in range(len(numeros)):
+        if numeros[i] < pivot:
+            left.append(numeros[i])
+        else:
+            right.append(numeros[i])
 
-        return sortNLogN(left) + [pivot] + sortNLogN(right)
+    return sortNLogN(left) + [pivot] + sortNLogN(right)
 
 
-arrayNumeros = [randint(1,100) for i in range(500)]
+arrayNumeros = [randint(1, int(sys.argv[1])) for i in range(int(sys.argv[1]))]
+print('\033[94m' + '\n--- RESULTADOS DEL TEST ---' + '\033[0m')
 
-print('Algoritmo NxN')
-print(timeit('sortNxN(arrayNumeros)',globals = globals(), number = 1000) * 1000)
 
-print('Algoritmo N')
-print(timeit('sortN(arrayNumeros)',globals = globals(), number = 1000) * 1000)
+print('Array size in test: ' + sys.argv[1] + ":")
 
-print('Algoritmo NLogN')
-print(timeit('sortNLogN(arrayNumeros)',globals = globals(), number = 1000) * 1000)
+resultado1 = timeit('sortN(arrayNumeros)', globals=globals(), number=200)
+print('Solución O(N)  \t \t' + str(resultado1 * 1000))
+
+resultado2 = timeit('sortNLogN(arrayNumeros)', globals=globals(), number=200)
+print('Solución O(N log N)  \t' + str(resultado2 * 1000))
+
+resultado3 = timeit('sortNxN(arrayNumeros)', globals=globals(), number=200)
+print('Solución O(N²) \t \t' + str(resultado3 * 1000) + '\n')
 
