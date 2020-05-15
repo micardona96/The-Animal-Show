@@ -3,28 +3,28 @@ import os
 import sys
 
 if (sys.argv[1] == 'small'):
-    os.system("py ./lib/small.py")
+    os.system("python ./lib/small.py")
 
 elif (sys.argv[1] == 'medium'):
-    os.system("py ./lib/medium.py")
+    os.system("python ./lib/medium.py")
 
 elif (sys.argv[1] == 'large'):
-    os.system("py ./lib/large.py")
+    os.system("python ./lib/large.py")
 
 elif (sys.argv[1] == 'custom'):
-    os.system("py ./lib/custom.py")
+    os.system("python ./lib/custom.py")
 
 
 elif (sys.argv[1] == 'run-test'):
     if len(sys.argv) == 3:
-        os.system("py ./test/algoritmos.py " + sys.argv[2])
+        os.system("python ./test/algoritmos.py " + sys.argv[2])
     else:
         print('\033[91m' + '\nError: ' + '\033[0m' + ' run-test requires an Int argument. \n\ttry: py main.py run-test 100 \n')
 
 
 elif (sys.argv[1] == 'help'):
     print('\033[94m' + '\n---  THE ANIMAL SHOW CLI ---\n' + '\033[0m')
-    print("Usage:  py main.py [command] \n ")
+    print("Usage:  python main.py [command] \n ")
     print("Commands:")
     print(
         "  run-test [int]: \t  performance tests and comparisons; with complexities N, NlogN, NxN\n")
