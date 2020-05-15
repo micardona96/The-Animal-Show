@@ -191,7 +191,7 @@ Esta sera una implementacion generica del algoritmo burbuja, solo es usado para 
 
 ***Algoritmo genérico BubbleSort***
 
-[Ir al contexto de la implementación](./test/algoritmos.py#L20)
+[Ir al contexto de la implementación](./test/algoritmos.py#L23)
 
 ```python
 def sortNxN(numeros):
@@ -237,7 +237,7 @@ Esta sera una implementacion generica del algoritmo QuickSort, solo es usado par
 
 ***Algoritmo genérico QuickSort***
 
-[Ir al contexto de la implementación](./test/algoritmos.py#L30)
+[Ir al contexto de la implementación](./test/algoritmos.py#L34)
 
 ``` python
 def sortNLogN(numeros):
@@ -293,7 +293,7 @@ Esta sera una implementacion generica del algoritmo Counting Sort, solo es usado
 
 ***Algoritmo genérico CountingSort***
 
-[Ir al contexto de la implementación](./test/algoritmos.py#L4)
+[Ir al contexto de la implementación](./test/algoritmos.py#L6)
 
 ``` python 
 def sortN(numeros):
