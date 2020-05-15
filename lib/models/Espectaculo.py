@@ -49,16 +49,14 @@ class Espectaculo:
         for i in range(1,len(self.animales)):
             if self.animales[i].cantidad > maxAnimal.cantidad:
                 maxAnimal = self.animales[i]
-            elif self.animales[i].cantidad == maxAnimal.cantidad:
-                arrayMaxAnimales.append(self.animales[i])
         
-        print('El/Los animales que más partició/participaron en escenas fueron: ')
-        if len(arrayMaxAnimales) == 0:
-            print(maxAnimal.nombre + " con " + str(maxAnimal.cantidad * 2) + " escenas")
-        else:
-            for animal in arrayMaxAnimales:
-                print(animal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
-            print(maxAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
+        for i in range(len(self.animales)):
+            if self.animales[i].cantidad == maxAnimal.cantidad:
+                arrayMaxAnimales.append(self.animales[i])
+
+        print('El/Los animales que más participó/participaron en escenas fueron: ')
+        for animal in arrayMaxAnimales:
+            print(animal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
 
     def minParticipacionAnimal(self):
         """ Algoritmo para calcular los animales con menor participación en escenas. Complejidad O(n) (número de animales)"""
@@ -67,17 +65,14 @@ class Espectaculo:
         for i in range(1,len(self.animales)):
             if self.animales[i].cantidad < minAnimal.cantidad:
                 minAnimal = self.animales[i]
-            elif self.animales[i].cantidad == minAnimal.cantidad:
+        
+        for i in range(len(self.animales)):
+            if self.animales[i].cantidad == minAnimal.cantidad:
                 arrayMinAnimales.append(self.animales[i])
         
-        print('El/Los animales que menos partició/participaron en escenas fueron: ')
-        if len(arrayMinAnimales) == 0:
-            print(minAnimal.nombre + " con " + str(minAnimal.cantidad * 2) + " escenas")
-        else:
-            
-            for animal in arrayMinAnimales:
-                print(animal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
-            print(minAnimal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
+        print('El/Los animales que menos participó/participaron en escenas fueron: ')
+        for animal in arrayMinAnimales:
+            print(animal.nombre + " con " + str(animal.cantidad * 2) + " escenas")
 
     def sortNxN(self):
         """ Algoritmo de ordenamiento burbuja (Complejidad O(N^2)) """
