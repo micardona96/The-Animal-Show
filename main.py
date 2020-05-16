@@ -37,4 +37,4 @@ elif (sys.argv[1] == 'help'):
 
 else:
     print(
-        '\033[91m' + '\nError: ' + '\033[0m' + sys.argv[1] + ' is not a The Animal Show command. \n')
+        '\033[91m' + '\nError: ' + '\033[0m' + sys.argv[1] + ' is not a The Animal Show command.\n')
