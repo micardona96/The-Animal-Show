@@ -21,7 +21,7 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
       - [Escena](#id98)
       - [Parte](#id97)
       - [Espectáculo](#id96)
-  - [Archivos y datos de pruebas](#id200)
+  - [Estructura y Archivos](#id200)
     - [Instrucciones de uso](#id11)
     
 - [Implementaciones ](#id12)
@@ -173,7 +173,7 @@ Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar
 
 ---
 
-### Archivos y datos de pruebas <a name="id200"></a>
+### Estructura y Archivos <a name="id200"></a>
 
 El proyecto se organiza de forma jerárquico, con los siguientes directorios, `./lib` `./test` estos direcctorios contienen los archivos necesarios para la ejecucion del sistema.
 
