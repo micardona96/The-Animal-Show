@@ -21,23 +21,21 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
       - [Escena](#id98)
       - [Parte](#id97)
       - [Espectáculo](#id96)
+  - [Archivos y datos de pruebas](#id200)
+    - [Instrucciones de uso](#id11)
+    - [Ejecución y Resultados ](#id12)
     
   - [Solución O (n²)](#id8)
     - [Análisis y solución](#id9)
     - [Implementación](#id10)
-    - [Instrucciones de uso](#id11)
-    - [Ejecución y Resultados ](#id12)
     
   - [Solución O (n log n) ](#id14)
     - [Análisis y solución](#id15)
     - [Implementación](#id16)
-    - [Instrucciones de uso](#id17)
-    - [Ejecución y Resultados ](#id18)
+
   - [Solución O (n)](#id20)
     - [Análisis y solución](#id21)
     - [Implementación](#id22)
-    - [Instrucciones de uso](#id23)
-    - [Ejecución y Resultados ](#id24)
     
   - [Solución Estadísticas solicitadas por el gerente del Zoologico](#id30)
     - [Animal que participó en más escenas dentro del espectáculo](#id31)
@@ -175,8 +173,90 @@ Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar
 
 ---
 
-### Archivos y datos de pruebas
-En este apartado se especificaran los datos de prueba y en qué archivo se encuentran para su posterior ejecución
+### Archivos y datos de pruebas <a name="id200"></a>
+Antes de realizar la implementacion particular de los alogitmos de ordenamiento, realizamos algunas prueba de estos algorimos en frio, para comprobar sus funcionalidades; la implementacion de estos estara en el directorio test, ademas esta para metrizado para realizar pruebas con n, que es el tamaño de un arreglo que inicialmente esta en desorden y genereado de forma aleatoria. 
+
+con la ejecucion del siguiente comando en la raiz del proyecto, se ejecutaran n cantidad de test, de los cuales arrojara una tabla de los resultaods obtenidos con los algoritmos ***N*** vs ***NlogN*** vs ***N²***
+
+``` sh
+> python main.py run-test 10
+
+--- RESULTADOS DEL TEST (seconds) ---
+Array size in test 10:
+
+Size    N       NlogN   N²
+1       0.0069  0.0041  0.0022
+2       0.0073  0.0078  0.0039
+3       0.0105  0.0111  0.0057
+4       0.0099  0.0163  0.0077
+5       0.0125  0.0178  0.011
+6       0.0122  0.0242  0.0149
+7       0.0156  0.0252  0.0147
+8       0.0168  0.0311  0.0187
+9       0.0179  0.0343  0.0217
+10      0.0196  0.0364  0.0259
+
+```
+
+La ejecucion de estos algoritmos en frio, permitira comprender de forma general el funcionamiento y la complejidad de The Animal Show,
+estos datos seran utilizados para [Análisis general de resultados ](#id26)
+
+### Instrucciones de uso<a name="id11"></a>
+Todas las ejecuciones de los ardemientos para The Animal Show, ejecutaran las distintas complejidades para comparalas por cada ejecuccion. para la ejecucion de las instancias predefinidas small, medium, large, custom; Ejecutar el siguiente comando en la raiz del proyecto:
+
+
+```sh
+> python main.py small     
+```
+
+```sh
+> python main.py medium     
+```
+
+```sh
+> python main.py large     
+```
+
+Para la ejecucion de la instancia custom, primero modificar el archivo custo, que se encuenta en el directorio `./lib/custom`
+agregando las instancias de los animales, las escenas y las partes del espectaculo, con base a la siguiente guia de 4 animales, 3 partes y 2 escenas
+
+***Custom File***
+```  python
+...
+
+N = 4  #                                                      <===  N ANIMALES
+M = 3  #                                                      <===  M PARTES
+K = 2  #                                                      <===  K ESCENAS
+
+capibara = Animal('Capibara', 1)
+loro = Animal('Loro', 2)
+caiman = Animal('Caimán', 3)
+perro = Animal('perro', 4) 
+## nameN = Animal('name', N)                                  <=== AGREGAR OBJETOS ANIMALES 
+ANIMALES = [capibara, loro, caiman, perro] ##                 <=== AGREGAR NUEVOS ANIMALES EN LA LISTA
+
+escena1 = Escena([caiman, capibara, loro])
+escena2 = Escena([perro, capibara, loro])
+escena3 = Escena([perro, caiman, loro])
+escena4 = Escena([perro, caiman, capibara]) 
+## escena((M-1)* K) = Escena([..., ..., ...])                 <=== AGREGAR OBJETOS ESCENAS 
+ESCENAS = [escena1, escena2, escena3, escena4] ##             <=== AGREGAR NUEVAS ESCENAS EN LA LISTA
+
+parte1 = Parte([escena1, escena3])
+parte2 = Parte([escena2, escena4]) 
+parteApertura = Parte([escena1, escena2, escena3, escena4]) #  <=== AGREGAR NUEVAS ESCENAS EN LA LISTA
+## parteM = Parte([..., ...])                                  <=== AGREGAR OBJETOS PARTES 
+PARTES = [parte1, parte2] ##                                   <=== AGREGAR NUEVAS PARTES EN LA LISTA
+```
+
+```sh
+> python main.py custom     
+```
+
+
+
+#### Ejecución y Resultados <a name="id12"></a>
+(capturas de pantalla) 
 
 ---
 
@@ -216,11 +296,7 @@ ejecuta el llamada a sortNxN, ordenando así las partes internamente.
 - Ya por último el objeto instancia de la clase Espéctaculo recibe todas las partes ordenadas por sus respectivas escenas, y hace uso de la
 grandeza total por partes para ejecutar el algoritmo sortNxN (QuickSort) para ordenar todo el espéctaculo 
 
-#### Instrucciones de uso<a name="id11"></a>
-(como llamar al archivo en la ejecuion )
 
-#### Ejecución y Resultados <a name="id12"></a>
-(capturas de pantalla) 
 
 ---
 
@@ -271,12 +347,6 @@ ejecuta el llamada a sortNLogN, ordenando así las partes internamente.
 - Ya por último el objeto instancia de la clase Espéctaculo recibe todas las partes ordenadas por sus respectivas escenas, y hace uso de la
 grandeza total por partes para ejecutar el algoritmo sortNLogN (QuickSort) para ordenar todo el espéctaculo 
 
-#### Instrucciones de uso<a name="id17"></a>
-(como llamar al archivo en la ejecuion )
-
-#### Ejecución y Resultados <a name="id18"></a>
-(capturas de pantalla) 
-
 ---
 
 ### Solución O (n) <a name="id20"></a>
@@ -322,12 +392,6 @@ Esta función sortN es llamada secuencialmente por todos los objetos de las dist
 ejecuta el llamada a sortN, ordenando así las partes internamente.
 - Ya por último el objeto instancia de la clase Espéctaculo recibe todas las partes ordenadas por sus respectivas escenas, y hace uso de la
 grandeza total por partes para ejecutar el algoritmo sortN (CountingSort) para ordenar todo el espéctaculo
-
-#### Instrucciones de uso<a name="id23"></a>
-(como llamar al archivo en la ejecuion )
-
-#### Ejecución y Resultados <a name="id24"></a>
-(capturas de pantalla) 
 
 ---
 
