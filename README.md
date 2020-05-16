@@ -23,8 +23,8 @@ Este proyecto se basa en la construcción de un software de ordenamiento que per
       - [Espectáculo](#id96)
   - [Archivos y datos de pruebas](#id200)
     - [Instrucciones de uso](#id11)
-    - [Ejecución y Resultados ](#id12)
     
+- [Implementaciones ](#id12)
   - [Solución O (n²)](#id8)
     - [Análisis y solución](#id9)
     - [Implementación](#id10)
@@ -266,11 +266,8 @@ Tambien puede ejecutar el comando ***help*** para obtener informacion sobre el u
 > python main.py help     
 ```
 
-#### Ejecución y Resultados <a name="id12"></a>
-(capturas de pantalla) 
-
 ---
-
+## Implementaciones <a name="id12"></a>
 ### Solución O (n²)  <a name="id8"></a>
 #### Análisis y solución <a name="id9"></a>
 Para obtener una solución O (n²) al problema planteado, se realizó un análisis de los respectivos algortimos ya existentes
