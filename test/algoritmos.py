@@ -50,18 +50,18 @@ def sortNLogN(numeros):
     return sortNLogN(left) + [pivot] + sortNLogN(right)
 
 
-arrayNumeros = [randint(1, int(sys.argv[1])) for i in range(int(sys.argv[1]))]
-print('\033[94m' + '\n--- RESULTADOS DEL TEST ---' + '\033[0m')
+[randint(1, int(sys.argv[1])) for i in range(int(sys.argv[1]))]
+print('\033[94m' + '\n--- RESULTADOS DEL TEST (seconds) ---' + '\033[0m')
+print('Array size in test: ' + sys.argv[1])
 
+resultado1 = timeit(
+    'sortN([randint(1, int(sys.argv[1])) for i in range(int(sys.argv[1]))])', globals=globals(), number=1000)
+print('Solución O(N)  \t \t' + str(resultado1))
 
-print('Array size in test: ' + sys.argv[1] + ":")
+resultado2 = timeit(
+    'sortNLogN([randint(1, int(sys.argv[1])) for i in range(int(sys.argv[1]))])', globals=globals(), number=1000)
+print('Solución O(N log N)  \t' + str(resultado2))
 
-resultado1 = timeit('sortN(arrayNumeros)', globals=globals(), number=200)
-print('Solución O(N)  \t \t' + str(resultado1 * 1000))
-
-resultado2 = timeit('sortNLogN(arrayNumeros)', globals=globals(), number=200)
-print('Solución O(N log N)  \t' + str(resultado2 * 1000))
-
-resultado3 = timeit('sortNxN(arrayNumeros)', globals=globals(), number=200)
-print('Solución O(N²) \t \t' + str(resultado3 * 1000) + '\n')
-
+resultado3 = timeit(
+    'sortNxN([randint(1, int(sys.argv[1])) for i in range(int(sys.argv[1]))])', globals=globals(), number=1000)
+print('Solución O(N²) \t \t' + str(resultado3) + '\n')
