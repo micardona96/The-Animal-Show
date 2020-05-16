@@ -174,9 +174,16 @@ Clase encargada de crear objetos tipo Espectáculo,la cual se encarga de agrupar
 ---
 
 ### Archivos y datos de pruebas <a name="id200"></a>
-Antes de realizar la implementacion particular de los alogitmos de ordenamiento, realizamos algunas prueba de estos algorimos en frio, para comprobar sus funcionalidades; la implementacion de estos estara en el directorio test, ademas esta para metrizado para realizar pruebas con n, que es el tamaño de un arreglo que inicialmente esta en desorden y genereado de forma aleatoria. 
 
-con la ejecucion del siguiente comando en la raiz del proyecto, se ejecutaran n cantidad de test, de los cuales arrojara una tabla de los resultaods obtenidos con los algoritmos ***N*** vs ***NlogN*** vs ***N²***
+El proyecto se organiza de forma jerárquico, con los siguientes directorios, `./lib` `./test` estos direcctorios contienen los archivos necesarios para la ejecucion del sistema.
+
+El directorio `./lib` contiene algunas instancias predefinidas para la ejecuacion rapida de 3 casos particulares de The Animal Show, estas instancias se carcterizan por su tamaño, ademas contiene el archivo custom que permite agregar instancias personalizadas editando, dicho archivo,
+
+El directorio `./lib/models` contiene la implemtancion de las clases y algoritmos para la ejecuion del sistema.
+
+Antes de realizar la implementacion particular de los algoritmos de ordenamiento, realizamos algunas prueba en frio, para comprobar sus funcionalidades; la implementacion de estos estara en el directorio `./test`, ademas esta parametrizado para realizar pruebas personalizadas,  `run-test [size]` sera tamaño de una lista genereado de forma aleatoria. 
+
+con la ejecucion del siguiente comando en la raiz del proyecto, se ejecutaran n cantidad de test, de los cuales nos arrojara una tabla de los resultados con los algoritmos ***N*** vs ***NlogN*** vs ***N²***
 
 ``` sh
 > python main.py run-test 10
@@ -217,7 +224,7 @@ Todas las ejecuciones de los ardemientos para The Animal Show, ejecutaran las di
 > python main.py large     
 ```
 
-Para la ejecucion de la instancia custom, primero modificar el archivo custo, que se encuenta en el directorio `./lib/custom`
+Para la ejecucion de la instancia ***custom***, primero modificar el archivo custo, que se encuenta en el directorio `./lib/custom`
 agregando las instancias de los animales, las escenas y las partes del espectaculo, con base a la siguiente guia de 4 animales, 3 partes y 2 escenas
 
 ***Custom File***
@@ -253,7 +260,11 @@ PARTES = [parte1, parte2] ##                                   <=== AGREGAR NUEV
 > python main.py custom     
 ```
 
+Tambien puede ejecutar el comando ***help*** para obtener informacion sobre el uso de la linea de comandos CLI.
 
+```sh
+> python main.py help     
+```
 
 #### Ejecución y Resultados <a name="id12"></a>
 (capturas de pantalla) 
