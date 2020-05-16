@@ -485,9 +485,9 @@ se implementó un método llamado promedioGradezaEspectaculo en la clase Espect�
 Análisis realizado tomando muestras de arreglos(numéricos) de cien(100) tamaños diferentes ordenandolos con los
 algoritmos de distintas complejidades para poder obtener su comparación.
 
+![grafico1](https://user-images.githubusercontent.com/37484798/82126397-1ace1200-9772-11ea-8d97-79c098ae9e64.png)
 
 ---
-
 
 
 ## 🎉 Conclusiones del proyecto <a name="id27"></a>
