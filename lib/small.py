@@ -55,12 +55,12 @@ espectaculo = Espectaculo(
     apertura=parteApertura)
 
 
-print('\033[94m' + '\n--- RESULTADOS (seconds) ---' + '\033[0m')
+print('\033[94m' + '\n--- RESULTADOS ---' + '\033[0m')
 espectaculo.main(algoritmo='N')
 espectaculo.imprimirResultados()
 
 
-print('\033[94m' + '\n--- ANÁLISIS DE COMPLEJIDAD ---' + '\033[0m')
+print('\033[94m' + '\n--- ANÁLISIS DE COMPLEJIDAD (seconds) ---' + '\033[0m')
 
 
 resultado1 = timeit("espectaculo.main(algoritmo='N')",
