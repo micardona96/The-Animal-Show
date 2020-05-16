@@ -100,8 +100,9 @@ los mismos algortimos de ordenamiento con sus distintas complejidades, para así
 anteriormente.
 
 Para el calculo del tiempo de ejecución de los distintos algoritmos, se hará uso del método timeit, perteneciente al módulo timeit
-de la libreria estandar de python, el cual nos ofrece el tiempo de ejecución promedio de una función ejecutandola 200 veces. Para
-mayor legibilidad ya que los resultados pueden ser muy pequeños en segundos, se multiplicarán por 1000 los valores del tiempo.
+de la libreria estandar de python, ***El método timeit() ejecuta la instrucción de configuración una vez, luego ejecuta la instrucción primaria repetidamente y devuelve la cantidad de tiempo que pasa. El argumento de timeit() controla cuántas veces ejecutar la declaración; el valor predeterminado es 1,000,000.***
+
+[Más información sobre timeit](https://rico-schmidt.name/pymotw-3/timeit/#contenido-del-modulo)
 
 ---
 
