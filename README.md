@@ -604,7 +604,11 @@ Pero con un análisis más profundo con entradas pequeñas podemos ver como el a
 ---
 
 
-## 🎉 Conclusiones del proyecto <a name="id27"></a>
+## 🎉 Conclusion del proyecto <a name="id27"></a>
+Finalmente, este proyecto nos ayudó a poner en práctica los aspectos teóricos vistos en clase sobre las distintas complejidades
+de los algoritmos de ordenamiento. Como se pudo evidenciar en los resultados arrojados de los tiempos de ejecución de los algoritmos
+implementados en el proyecto (CountingSort, QuickSort, Burbuja), con entradas muy pequeñas prácticamente los algoritmos tiene un comportamiento similiar o alguno con complejidad teórica superior se comporta de una mejor manera, esto es posible ya que
+en las gráficas de las funciones (N², NLogN, N) siempre se observa que para valores de x >= k una función tiene menor complejidad que otra, sin embargo para valores de x < k, esto no se garantiza.
 
 
 ## 💻 Correr script online <a name="id100"></a>
