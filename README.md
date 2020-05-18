@@ -560,13 +560,13 @@ La primera gráfica es de los algoritmos desarrollados en Python con valores ent
 Cabe aclarar que los resultados presentados en el siguiente análisis se basan en las mismas implementaciones que usa The Animal Show, pero en este caso se han simplificado para obtener unas proyecciones de resultados a gran escala. Estos resultados están directamente relacionados a los obtenidos al ejecutar las instancias small, medium, y large en el Script de ordenamiento de The Animal Show. 
  
 
-![1](./imgs/1)
+![1](./imgs/1.jpeg)
 
 Aquí vemos una gráfica del comportamiento de los llamados a los procedimientos con los algoritmos CountingSort, QuickSort y BubbleSort; cómo podemos ver, se comportan de manera inconsistente, que después de realizadas varias pruebas podemos concluir que este comportamiento es probablemente causado por factores externos al algoritmo como pueden ser la gestión de memoria o la gestión de los procesos del computador.
 
 En análisis individual de cada una de las ejecuciones del algoritmo O(N), podemos mostrar gracias a una línea de tendencia, su comportamiento línea en la ejecución del algoritmo, por la forma de la gráfica podemos observar que tiene picos aleatorios a lo largo de su recorrido lo cual deba deberse a acceso a memoria por parte del procesador o manejos de interrupciones o muchos factores externos que puedan hacer que la gráfica se vea de esa manera.
  
- ![n](./imgs/n)
+ ![n](./imgs/n.jpeg)
 
 En análisis individual de cada una de las ejecuciones del algoritmo O(N), podemos mostrar gracias a una línea de tendencia, su comportamiento cuasi líneo en la ejecución del algoritmo, 
 Pero analizando el caso en la entrada de tamaño 40, obtenemos unos resultados particularmente buenos al incrementar el tamaño de la entrada al doble, con un crecimiento en el orden complejidad casi línea, donde difiere por un factor de menos de 0.0633 en este caso, este pequeño valor corresponde a un valor dependiente Log N, dichos valores tienden hacer muy pequeños, y por eso este resultado comprueba por que el orden N Log N es un muy buen resultado en términos de complejidad.
@@ -578,7 +578,7 @@ Pero analizando el caso en la entrada de tamaño 40, obtenemos unos resultados p
 
 De nuevo por la forma de la gráfica podemos observar que tiene picos aleatorios a lo largo de su recorrido lo cual deba deberse a acceso a memoria por parte del procesador o manejos de interrupciones o muchos factores externos que puedan hacer que la gráfica se vea de esa manera.
 
-![nlogn](./imgs/nlogn)
+![nlogn](./imgs/nlogn.jpeg)
 
 
 En el análisis individual de cada una de las ejecuciones del algoritmo O(N²), podemos mostrar gracias a una línea de tendencia polinómica, su comportamiento cuadrático en la ejecución del algoritmo.
@@ -591,15 +591,15 @@ Pero analizando el caso en la entrada de tamaño 40, obtenemos que sus tiempos d
  
 Igualmente, por la forma de la gráfica podemos observar que tiene picos aleatorios a lo largo de su recorrido lo cual deba deberse a acceso a memoria por parte del procesador o manejos de interrupciones o muchos factores externos que puedan hacer que la gráfica se vea de esa manera.
 
- ![nxn](./imgs/nxn)
+ ![nxn](./imgs/nxn.jpeg)
 
 Al solapar los resultados, obtenemos claramente sus distinciones, viendo como a medida que aumenta el tamaño del arreglo se alejan sus resultados drásticamente, principalmente en el caso de N².
  
-![tendencia](./imgs/tendencia)
+![tendencia](./imgs/tendencia.png)
 
 Pero con un análisis más profundo con entradas pequeñas podemos ver como el algoritmo N² tiene un mejor comportamiento que N y N log N. analizar las líneas de tendencia para ver con claridad de lo anteriormente mencionado.
 
- ![small](./imgs/small)
+ ![small](./imgs/small.jpeg)
 
 ---
 
