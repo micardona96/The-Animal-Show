@@ -568,7 +568,7 @@ En análisis individual de cada una de las ejecuciones del algoritmo O(N), podem
  
  ![n](./imgs/n.jpeg)
 
-En análisis individual de cada una de las ejecuciones del algoritmo O(NLogN), podemos mostrar gracias a una línea de tendencia, su comportamiento cuasi líneo en la ejecución del algoritmo, 
+En análisis individual de cada una de las ejecuciones del algoritmo O(NLogN), podemos mostrar gracias a una línea de tendencia, su comportamiento casi líneo en la ejecución del algoritmo, 
 Pero analizando el caso en la entrada de tamaño 40, obtenemos unos resultados particularmente buenos al incrementar el tamaño de la entrada al doble, con un crecimiento en el orden complejidad casi línea, donde difiere por un factor de menos de 0.0633 en este caso, este pequeño valor corresponde a un valor dependiente Log N, dichos valores tienden hacer muy pequeños, y por eso este resultado comprueba por que el orden N Log N es un muy buen resultado en términos de complejidad.
 
 |Size	 |  Time  |
@@ -576,7 +576,7 @@ Pero analizando el caso en la entrada de tamaño 40, obtenemos unos resultados p
 |40    |	0.3566|
 |80	   |  0.7358|
 
-De nuevo por la forma de la gráfica podemos observar que tiene picos aleatorios a lo largo de su recorrido lo cual deba deberse a acceso a memoria por parte del procesador o manejos de interrupciones o muchos factores externos que puedan hacer que la gráfica se vea de esa manera.
+De nuevo por la forma de la gráfica podemos observar que tiene picos aleatorios a lo largo de su recorrido lo cual puede deberse al acceso a memoria por parte del procesador o manejos de interrupciones o muchos factores externos que puedan hacer que la gráfica se vea de esa manera.
 
 ![nlogn](./imgs/nlogn.jpeg)
 
