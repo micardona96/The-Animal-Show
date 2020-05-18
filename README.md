@@ -554,10 +554,52 @@ se implementó un método llamado promedioGradezaEspectaculo en la clase Espect�
 
 ## 👨‍🔬 Análisis general de resultados  <a name="id26"></a>
 
-Análisis realizado tomando muestras de arreglos(numéricos) de cien(100) tamaños diferentes ordenandolos con los
-algoritmos de distintas complejidades para poder obtener su comparación.
 
-![grafico1](https://user-images.githubusercontent.com/37484798/82126397-1ace1200-9772-11ea-8d97-79c098ae9e64.png)
+La primera gráfica es de los algoritmos desarrollados en Python con valores entre 1 y 100, además cada uno de los llamados se realizó 1000 veces para tomar el promedio de ejecución de cada algoritmo con diferentes tamaños de entrada, entonces para la toma de muestras y análisis de estos resultados se realizaron más de 300.000 ejecuciones de los algoritmos.
+
+Cabe aclarar que los resultados presentados en el siguiente análisis se basan en las mismas implementaciones que usa The Animal Show, pero en este caso se han simplificado para obtener unas proyecciones de resultados a gran escala. Estos resultados están directamente relacionados a los obtenidos al ejecutar las instancias small, medium, y large en el Script de ordenamiento de The Animal Show. 
+ 
+
+![1](./imgs/1)
+
+Aquí vemos una gráfica del comportamiento de los llamados a los procedimientos con los algoritmos CountingSort, QuickSort y BubbleSort; cómo podemos ver, se comportan de manera inconsistente, que después de realizadas varias pruebas podemos concluir que este comportamiento es probablemente causado por factores externos al algoritmo como pueden ser la gestión de memoria o la gestión de los procesos del computador.
+
+En análisis individual de cada una de las ejecuciones del algoritmo O(N), podemos mostrar gracias a una línea de tendencia, su comportamiento línea en la ejecución del algoritmo, por la forma de la gráfica podemos observar que tiene picos aleatorios a lo largo de su recorrido lo cual deba deberse a acceso a memoria por parte del procesador o manejos de interrupciones o muchos factores externos que puedan hacer que la gráfica se vea de esa manera.
+ 
+ ![n](./imgs/n)
+
+En análisis individual de cada una de las ejecuciones del algoritmo O(N), podemos mostrar gracias a una línea de tendencia, su comportamiento cuasi líneo en la ejecución del algoritmo, 
+Pero analizando el caso en la entrada de tamaño 40, obtenemos unos resultados particularmente buenos al incrementar el tamaño de la entrada al doble, con un crecimiento en el orden complejidad casi línea, donde difiere por un factor de menos de 0.0633 en este caso, este pequeño valor corresponde a un valor dependiente Log N, dichos valores tienden hacer muy pequeños, y por eso este resultado comprueba por que el orden N Log N es un muy buen resultado en términos de complejidad.
+
+|Size	 |  Time  |
+| ---- |  ----  |
+|40    |	0.3566|
+|80	   |  0.7358|
+
+De nuevo por la forma de la gráfica podemos observar que tiene picos aleatorios a lo largo de su recorrido lo cual deba deberse a acceso a memoria por parte del procesador o manejos de interrupciones o muchos factores externos que puedan hacer que la gráfica se vea de esa manera.
+
+![nlogn](./imgs/nlogn)
+
+
+En el análisis individual de cada una de las ejecuciones del algoritmo O(N²), podemos mostrar gracias a una línea de tendencia polinómica, su comportamiento cuadrático en la ejecución del algoritmo.
+Pero analizando el caso en la entrada de tamaño 40, obtenemos que sus tiempos de ejecución son superiores en una pequeña medida al esperado al duplicar la entrada. Como se ve en la ejecución, este comportamiento hace que la ejecución pase de 0.4 Segundos a 2 Segundos. 
+
+|Size	 |  Time  |
+| ---- |  ----  |
+|40    |	0.4428|
+|80	   |  2.0214|
+ 
+Igualmente, por la forma de la gráfica podemos observar que tiene picos aleatorios a lo largo de su recorrido lo cual deba deberse a acceso a memoria por parte del procesador o manejos de interrupciones o muchos factores externos que puedan hacer que la gráfica se vea de esa manera.
+
+ ![nxn](./imgs/nxn)
+
+Al solapar los resultados, obtenemos claramente sus distinciones, viendo como a medida que aumenta el tamaño del arreglo se alejan sus resultados drásticamente, principalmente en el caso de N².
+ 
+![tendencia](./imgs/tendencia)
+
+Pero con un análisis más profundo con entradas pequeñas podemos ver como el algoritmo N² tiene un mejor comportamiento que N y N log N. analizar las líneas de tendencia para ver con claridad de lo anteriormente mencionado.
+
+ ![small](./imgs/small)
 
 ---
 
