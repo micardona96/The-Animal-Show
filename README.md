@@ -595,7 +595,7 @@ Igualmente, por la forma de la gráfica podemos observar que tiene picos aleator
 
 Al solapar los resultados, obtenemos claramente sus distinciones, viendo como a medida que aumenta el tamaño del arreglo se alejan sus resultados drásticamente, principalmente en el caso de N².
  
-![tendencia](./imgs/tendencia.png)
+![tendencia](./imgs/tendencia.jpeg)
 
 Pero con un análisis más profundo con entradas pequeñas podemos ver como el algoritmo N² tiene un mejor comportamiento que N y N log N. analizar las líneas de tendencia para ver con claridad de lo anteriormente mencionado.
 
