@@ -1,10 +1,21 @@
 #  🐧 The Animal Show
 
+
 ![languages](https://img.shields.io/github/languages/top/micardona96/FADA)
 ![Size](https://img.shields.io/github/repo-size/micardona96/FADA)
 ![commits](https://img.shields.io/github/commit-activity/m/micardona96/FADA)
 ![last-commit](https://img.shields.io/github/last-commit/micardona96/FADA)
 ![LICENSE](https://img.shields.io/github/license/micardona96/FADA)
+
+
+#### Desarrollado por:
+
+Miguel Angel Cardona Chamorro 1628209-3743 <br>
+***cardona.miguel@correounivalle.edu.co***
+
+Gustavo Adolfo Pinto Zapata 1627047-3743 <br>
+***gustavo.pinto@correounivalle.edu.co***
+
 
 Este proyecto se basa en la construcción de un software de ordenamiento que permita gestionar el itinerario y orden de prestación para el The animal show. La construcción del software está fundamentada en el análisis de complejidad de las escenas y partes del show, haciendo que en cada escena esta ordenada, tal que la aparición de los animales sea según su grandeza, además las partes del show también estarán ordenadas de forma ascendente, permitiendo que cada escena será mas grande que la anterior. Tomando en cuenta esto, disponemos de un espectáculo maravilloso.
 
